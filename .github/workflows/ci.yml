@@ -54,17 +54,42 @@ jobs:
 
       - name: Verify generated outputs are committed
         run: |
-          if ! git diff --exit-code --stat -- packages/tokens/dist packages/brand/dist; then
-            echo "::error::Generated outputs are out of date."
+          # packages/tokens/dist is pure text (Style Dictionary output) and fully
+          # deterministic across machines — a byte diff here always means the
+          # committed dist is stale relative to packages/tokens/src. Block on it.
+          if ! git diff --exit-code --stat -- packages/tokens/dist; then
+            echo "::error::packages/tokens/dist is out of date."
             echo ""
-            echo "packages/tokens/dist and/or packages/brand/dist differ from what the"
-            echo "sources produce. Rebuild locally and commit the results:"
-            echo ""
-            echo "    pnpm build:tokens && pnpm build:brand"
-            echo "    git add packages/tokens/dist packages/brand/dist"
+            echo "Rebuild locally and commit the results:"
+            echo "    pnpm build:tokens"
+            echo "    git add packages/tokens/dist"
             echo ""
             exit 1
           fi
+
+          # packages/brand/dist mixes deterministic text (manifest.json, SVGs) with
+          # PNGs rasterised by sharp/libvips, whose native codec can emit a few
+          # different bytes for the same input across CPU architectures (Apple
+          # Silicon dev machine vs. this x86_64 runner) — a real, structural
+          # limitation, not a stale-dist bug. So: fail on anything that isn't a
+          # PNG (missed rebuild, changed SVG source, new/removed files), warn only
+          # on PNG content drift.
+          brand_diff="$(git diff --name-only -- packages/brand/dist)"
+          brand_non_png="$(echo "$brand_diff" | grep -v '\.png$' || true)"
+          if [ -n "$brand_non_png" ]; then
+            echo "::error::packages/brand/dist has non-PNG changes that must be rebuilt and committed:"
+            echo "$brand_non_png"
+            echo ""
+            echo "Rebuild locally and commit the results:"
+            echo "    pnpm build:brand"
+            echo "    git add packages/brand/dist"
+            exit 1
+          fi
+          if [ -n "$brand_diff" ]; then
+            echo "::warning::PNG(s) in packages/brand/dist differ by a few bytes from this runner's sharp/libvips build (expected across CPU architectures, not a stale-dist bug):"
+            echo "$brand_diff"
+          fi
+
           untracked="$(git ls-files --others --exclude-standard -- packages/tokens/dist packages/brand/dist)"
           if [ -n "$untracked" ]; then
             echo "::error::New generated files are not committed:"

@@ -18,9 +18,20 @@
  *   dist/packs/*.zip         downloadable packs
  *   dist/manifest.json       what the docs site reads for download cards
  *
- * Deterministic: same inputs → byte-identical outputs (fixed zip timestamps,
- * sorted file order, no randomness, no wall-clock values in files).
+ * Deterministic within a platform: fixed zip timestamps (UTC-locked, see
+ * `process.env.TZ` below), sorted file order, no randomness, no wall-clock
+ * values in files. PNG bytes from `sharp`/libvips can still differ a few
+ * bytes across CPU architectures (e.g. Apple Silicon dev machine vs. an
+ * x86_64 CI runner) for the same input — that's the native codec, not this
+ * script; CI's "generated outputs" check accounts for it (see ci.yml).
  */
+
+// Force UTC before any Date work: archiver/compress-commons encode DOS zip
+// timestamps from the Date object's *local* getters (the DOS format itself
+// carries no timezone), so the same fixed instant produced different bytes
+// on a machine in another timezone than the CI runner. Locking the process's
+// notion of "local time" to UTC makes every host agree.
+process.env.TZ = 'UTC';
 
 import fs from 'node:fs';
 import path from 'node:path';
