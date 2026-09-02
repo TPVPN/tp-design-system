@@ -1,0 +1,16 @@
+{
+  "name": "@tpvpn/brand",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "TP VPN brand assets: logo sources, generated raster exports, app icons, social images and downloadable packs",
+  "scripts": {
+    "build": "node scripts/build-assets.mjs",
+    "typecheck": "echo skip"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.4",
+    "text-to-svg": "^3.1.5",
+    "archiver": "^7.0.1"
+  }
+}

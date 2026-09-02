@@ -1,0 +1,22 @@
+{
+  "name": "tp-design-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TP VPN Design System — brand, tokens, UI components and the documentation site",
+  "packageManager": "pnpm@11.9.0",
+  "engines": { "node": ">=20.9" },
+  "scripts": {
+    "build": "pnpm run build:tokens && pnpm run build:brand && pnpm run build:site",
+    "build:tokens": "pnpm --filter @tpvpn/tokens build",
+    "build:brand": "pnpm --filter @tpvpn/brand build",
+    "build:site": "pnpm --filter @tpvpn/site build",
+    "dev": "pnpm --filter @tpvpn/site dev",
+    "preview": "pnpm --filter @tpvpn/site preview",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "lint": "pnpm -r --if-present lint",
+    "check": "pnpm run build:tokens && pnpm run typecheck && pnpm run build:site"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@tpvpn/tokens",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "TP VPN design tokens (W3C DTCG source) built with Style Dictionary for Web, Flutter, iOS, Android and Figma",
+  "main": "./dist/json/tokens.json",
+  "exports": {
+    ".": "./dist/json/tokens.json",
+    "./css": "./dist/css/tokens.css",
+    "./tailwind": "./dist/tailwind/theme.css",
+    "./json": "./dist/json/tokens.json",
+    "./flat": "./dist/json/tokens.flat.json"
+  },
+  "files": ["src", "dist"],
+  "scripts": {
+    "build": "node build.mjs",
+    "typecheck": "echo skip"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.4.0"
+  }
+}

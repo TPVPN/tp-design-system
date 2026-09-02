@@ -1,0 +1,94 @@
+{
+  "typography": {
+    "$type": "typography",
+    "$description": "Composite type roles. fontFamily defaults to font.family.sans; numeric roles use tabular figures.",
+    "display-2xl": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.72}", "lineHeight": "{font.line-height.76}", "fontWeight": "{font.weight.extrabold}", "letterSpacing": "{font.letter-spacing.tighter}" },
+      "$description": "官网首屏"
+    },
+    "display-xl": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.64}", "lineHeight": "{font.line-height.68}", "fontWeight": "{font.weight.extrabold}", "letterSpacing": "{font.letter-spacing.tight}" },
+      "$description": "官网首屏"
+    },
+    "display-lg": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.48}", "lineHeight": "{font.line-height.52}", "fontWeight": "{font.weight.bold}", "letterSpacing": "{font.letter-spacing.tight}" },
+      "$description": "官网区块标题"
+    },
+    "display-md": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.40}", "lineHeight": "{font.line-height.44}", "fontWeight": "{font.weight.bold}", "letterSpacing": "{font.letter-spacing.tight}" },
+      "$description": "官网次级标题"
+    },
+    "display-sm": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.32}", "lineHeight": "{font.line-height.40}", "fontWeight": "{font.weight.bold}", "letterSpacing": "{font.letter-spacing.snug}" },
+      "$description": "App 显示标题（「已连接」）"
+    },
+    "title-lg": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.24}", "lineHeight": "{font.line-height.32}", "fontWeight": "{font.weight.semibold}", "letterSpacing": "{font.letter-spacing.snug}" },
+      "$description": "页面标题"
+    },
+    "title-md": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.20}", "lineHeight": "{font.line-height.28}", "fontWeight": "{font.weight.semibold}", "letterSpacing": "{font.letter-spacing.cozy}" },
+      "$description": "模块标题"
+    },
+    "title-sm": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.18}", "lineHeight": "{font.line-height.26}", "fontWeight": "{font.weight.semibold}", "letterSpacing": "{font.letter-spacing.normal}" },
+      "$description": "卡片大标题"
+    },
+    "headline": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.16}", "lineHeight": "{font.line-height.24}", "fontWeight": "{font.weight.semibold}", "letterSpacing": "{font.letter-spacing.normal}" },
+      "$description": "卡片标题 / 列表主文字"
+    },
+    "body-lg": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.17}", "lineHeight": "{font.line-height.26}", "fontWeight": "{font.weight.regular}", "letterSpacing": "{font.letter-spacing.normal}" },
+      "$description": "官网长文"
+    },
+    "body-md": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.16}", "lineHeight": "{font.line-height.24}", "fontWeight": "{font.weight.regular}", "letterSpacing": "{font.letter-spacing.normal}" },
+      "$description": "官网默认正文"
+    },
+    "body": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.14}", "lineHeight": "{font.line-height.22}", "fontWeight": "{font.weight.regular}", "letterSpacing": "{font.letter-spacing.normal}" },
+      "$description": "App 正文（默认）"
+    },
+    "body-sm": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.13}", "lineHeight": "{font.line-height.18}", "fontWeight": "{font.weight.regular}", "letterSpacing": "{font.letter-spacing.normal}" },
+      "$description": "密集信息"
+    },
+    "label-lg": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.16}", "lineHeight": "{font.line-height.24}", "fontWeight": "{font.weight.medium}", "letterSpacing": "{font.letter-spacing.normal}" },
+      "$description": "大按钮文字"
+    },
+    "label-md": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.14}", "lineHeight": "{font.line-height.20}", "fontWeight": "{font.weight.medium}", "letterSpacing": "{font.letter-spacing.normal}" },
+      "$description": "按钮 / 表单标签"
+    },
+    "label-sm": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.12}", "lineHeight": "{font.line-height.16}", "fontWeight": "{font.weight.medium}", "letterSpacing": "{font.letter-spacing.normal}" },
+      "$description": "小标签 / Tab"
+    },
+    "caption": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.12}", "lineHeight": "{font.line-height.18}", "fontWeight": "{font.weight.regular}", "letterSpacing": "{font.letter-spacing.normal}" },
+      "$description": "辅助说明"
+    },
+    "overline": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.11}", "lineHeight": "{font.line-height.16}", "fontWeight": "{font.weight.semibold}", "letterSpacing": "{font.letter-spacing.wide}", "textTransform": "uppercase" },
+      "$description": "分组小标（大写）"
+    },
+    "numeric-lg": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.32}", "lineHeight": "{font.line-height.40}", "fontWeight": "{font.weight.bold}", "letterSpacing": "{font.letter-spacing.normal}", "fontVariantNumeric": "tabular-nums" },
+      "$description": "网速 / 计时"
+    },
+    "numeric-md": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.24}", "lineHeight": "{font.line-height.32}", "fontWeight": "{font.weight.bold}", "letterSpacing": "{font.letter-spacing.normal}", "fontVariantNumeric": "tabular-nums" },
+      "$description": "数据展示"
+    },
+    "numeric-sm": {
+      "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.size.18}", "lineHeight": "{font.line-height.24}", "fontWeight": "{font.weight.semibold}", "letterSpacing": "{font.letter-spacing.normal}", "fontVariantNumeric": "tabular-nums" },
+      "$description": "列表数据"
+    },
+    "mono": {
+      "$value": { "fontFamily": "{font.family.mono}", "fontSize": "{font.size.13}", "lineHeight": "{font.line-height.20}", "fontWeight": "{font.weight.regular}", "letterSpacing": "{font.letter-spacing.normal}" },
+      "$description": "代码 / IP / 密钥"
+    }
+  }
+}

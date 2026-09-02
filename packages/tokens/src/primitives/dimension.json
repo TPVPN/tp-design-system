@@ -1,0 +1,139 @@
+{
+  "space": {
+    "$type": "dimension",
+    "$description": "4pt grid. Names match Tailwind spacing units (1 = 4px).",
+    "0": { "$value": "0px" },
+    "0-5": { "$value": "2px" },
+    "1": { "$value": "4px" },
+    "1-5": { "$value": "6px" },
+    "2": { "$value": "8px" },
+    "3": { "$value": "12px" },
+    "4": { "$value": "16px" },
+    "5": { "$value": "20px" },
+    "6": { "$value": "24px" },
+    "8": { "$value": "32px" },
+    "10": { "$value": "40px" },
+    "12": { "$value": "48px" },
+    "16": { "$value": "64px" },
+    "20": { "$value": "80px" },
+    "24": { "$value": "96px" },
+    "32": { "$value": "128px" }
+  },
+  "radius": {
+    "$type": "dimension",
+    "none": { "$value": "0px" },
+    "xs": { "$value": "6px", "$description": "Tags, chips, small badges" },
+    "sm": { "$value": "8px", "$description": "Small buttons, inputs in dense UI" },
+    "md": { "$value": "12px", "$description": "Controls: buttons, inputs, switches" },
+    "lg": { "$value": "16px", "$description": "Cards" },
+    "xl": { "$value": "20px", "$description": "Large cards, node list groups" },
+    "2xl": { "$value": "24px", "$description": "Sheets, dialogs" },
+    "3xl": { "$value": "32px", "$description": "Hero panels" },
+    "full": { "$value": "9999px", "$description": "Pills, circular buttons" }
+  },
+  "size": {
+    "$type": "dimension",
+    "control": {
+      "$description": "Interactive control heights",
+      "xs": { "$value": "28px" },
+      "sm": { "$value": "36px" },
+      "md": { "$value": "44px", "$description": "Default; minimum touch target" },
+      "lg": { "$value": "52px" },
+      "xl": { "$value": "60px" }
+    },
+    "icon": {
+      "xs": { "$value": "16px" },
+      "sm": { "$value": "20px" },
+      "md": { "$value": "24px" },
+      "lg": { "$value": "32px" },
+      "xl": { "$value": "48px" }
+    },
+    "avatar": {
+      "xs": { "$value": "24px" },
+      "sm": { "$value": "32px" },
+      "md": { "$value": "40px" },
+      "lg": { "$value": "56px" },
+      "xl": { "$value": "96px" }
+    },
+    "flag": {
+      "sm": { "$value": "24px" },
+      "md": { "$value": "32px" },
+      "lg": { "$value": "40px" }
+    },
+    "connection-button": {
+      "mobile": { "$value": "128px" },
+      "desktop": { "$value": "160px" }
+    },
+    "tab-bar": { "$value": "56px", "$description": "Plus safe-area inset bottom" },
+    "app-bar": { "$value": "56px" },
+    "touch-target-min": { "$value": "44px" },
+    "logo": {
+      "min-mark": { "$value": "24px" },
+      "min-horizontal": { "$value": "96px" }
+    }
+  },
+  "border-width": {
+    "$type": "dimension",
+    "hairline": { "$value": "1px" },
+    "thin": { "$value": "1.5px" },
+    "thick": { "$value": "2px" },
+    "focus": { "$value": "3px" }
+  },
+  "breakpoint": {
+    "$type": "dimension",
+    "xs": { "$value": "360px" },
+    "sm": { "$value": "640px" },
+    "md": { "$value": "768px" },
+    "lg": { "$value": "1024px" },
+    "xl": { "$value": "1280px" },
+    "2xl": { "$value": "1536px" }
+  },
+  "container": {
+    "$type": "dimension",
+    "narrow": { "$value": "720px" },
+    "content": { "$value": "1200px" },
+    "wide": { "$value": "1360px" }
+  },
+  "grid": {
+    "mobile": {
+      "columns": { "$type": "number", "$value": 4 },
+      "gutter": { "$type": "dimension", "$value": "16px" },
+      "margin": { "$type": "dimension", "$value": "16px" }
+    },
+    "tablet": {
+      "columns": { "$type": "number", "$value": 8 },
+      "gutter": { "$type": "dimension", "$value": "24px" },
+      "margin": { "$type": "dimension", "$value": "24px" }
+    },
+    "desktop": {
+      "columns": { "$type": "number", "$value": 12 },
+      "gutter": { "$type": "dimension", "$value": "24px" },
+      "margin": { "$type": "dimension", "$value": "32px" }
+    }
+  },
+  "z-index": {
+    "$type": "number",
+    "base": { "$value": 0 },
+    "raised": { "$value": 10 },
+    "sticky": { "$value": 100 },
+    "overlay": { "$value": 1000 },
+    "modal": { "$value": 1100 },
+    "popover": { "$value": 1200 },
+    "toast": { "$value": 1300 },
+    "tooltip": { "$value": 1400 }
+  },
+  "opacity": {
+    "$type": "number",
+    "disabled": { "$value": 0.4 },
+    "hover-overlay": { "$value": 0.06 },
+    "pressed-overlay": { "$value": 0.12 },
+    "scrim": { "$value": 0.5 },
+    "placeholder": { "$value": 1 }
+  },
+  "logo": {
+    "corner-ratio": { "$type": "number", "$value": 0.24, "$description": "Mark corner radius = side × 0.24 (66px → 15.84)" },
+    "clear-space-ratio": { "$type": "number", "$value": 0.5, "$description": "Clear space = mark height × 0.5 on all sides" },
+    "wordmark-gap-ratio": { "$type": "number", "$value": 0.18, "$description": "Gap between mark and wordmark = mark height × 0.18" },
+    "wordmark-size-ratio": { "$type": "number", "$value": 0.56, "$description": "Wordmark font size = mark height × 0.56" }
+  }
+}

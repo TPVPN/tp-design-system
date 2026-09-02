@@ -1,0 +1,191 @@
+{
+  "color": {
+    "bg": {
+      "$description": "Backgrounds (Light mode only)",
+      "canvas": { "$value": "{color.slate.25}", "$description": "Page background" },
+      "surface": { "$value": "{color.white}", "$description": "Cards, sheets, app bars" },
+      "surface-raised": { "$value": "{color.white}", "$description": "Elevated surfaces (paired with elevation.level-2+)" },
+      "surface-sunken": { "$value": "{color.slate.100}", "$description": "Inset areas: input fills, progress tracks, segmented controls" },
+      "surface-hover": { "$value": "{color.slate.50}", "$description": "Hover state on neutral surfaces" },
+      "surface-pressed": { "$value": "{color.slate.100}" },
+      "brand": { "$value": "{color.blue.500}", "$description": "Brand fill surfaces (hero, reversed logo backgrounds)" },
+      "brand-strong": { "$value": "{color.blue.600}" },
+      "brand-soft": { "$value": "{color.blue.50}", "$description": "Tinted surfaces: secondary button, selected rows, info banners" },
+      "brand-soft-hover": { "$value": "{color.blue.100}" },
+      "scrim": { "$value": "{color.alpha.ink-50}", "$description": "Modal backdrop" },
+      "glass": { "$value": "{color.alpha.white-80}", "$description": "Sticky header with backdrop blur (only permitted blur)" },
+      "inverse": { "$value": "{color.slate.900}" }
+    },
+    "fg": {
+      "$description": "Foreground / text / icon colors",
+      "primary": { "$value": "{color.slate.900}", "$description": "Headings and body. 17.9:1 on white" },
+      "secondary": { "$value": "{color.slate.600}", "$description": "Supporting text. 7.6:1" },
+      "muted": { "$value": "{color.slate.500}", "$description": "Captions, metadata. 4.76:1 (AA floor)" },
+      "placeholder": { "$value": "{color.slate.400}", "$description": "Placeholders & disabled only — not AA" },
+      "disabled": { "$value": "{color.slate.400}" },
+      "brand": { "$value": "{color.blue.600}", "$description": "Brand text, links. 4.82:1" },
+      "brand-strong": { "$value": "{color.blue.700}" },
+      "on-brand": { "$value": "{color.white}", "$description": "Text on brand fills" },
+      "on-inverse": { "$value": "{color.white}" },
+      "inverse": { "$value": "{color.white}" },
+      "link": { "$value": "{color.blue.600}" },
+      "link-hover": { "$value": "{color.blue.700}" }
+    },
+    "border": {
+      "default": { "$value": "{color.slate.200}", "$description": "Card and input borders" },
+      "strong": { "$value": "{color.slate.300}", "$description": "Hover / emphasised borders" },
+      "subtle": { "$value": "{color.slate.100}", "$description": "Dividers inside lists" },
+      "brand": { "$value": "{color.blue.500}", "$description": "Selected / active outlines" },
+      "focus": { "$value": "{color.blue.500}" },
+      "on-brand": { "$value": "{color.alpha.white-80}" },
+      "flag-inset": { "$value": "{color.alpha.ink-8}", "$description": "1px inner stroke on circular flags" }
+    },
+    "action": {
+      "$description": "Interactive component colors",
+      "primary": {
+        "bg": { "$value": "{color.blue.600}", "$description": "AA with white label (4.82:1)" },
+        "bg-hover": { "$value": "{color.blue.700}" },
+        "bg-pressed": { "$value": "{color.blue.800}" },
+        "fg": { "$value": "{color.white}" }
+      },
+      "secondary": {
+        "bg": { "$value": "{color.blue.50}" },
+        "bg-hover": { "$value": "{color.blue.100}" },
+        "bg-pressed": { "$value": "{color.blue.200}" },
+        "fg": { "$value": "{color.blue.700}" }
+      },
+      "ghost": {
+        "bg": { "$value": "transparent" },
+        "bg-hover": { "$value": "{color.slate.100}" },
+        "bg-pressed": { "$value": "{color.slate.200}" },
+        "fg": { "$value": "{color.blue.600}" }
+      },
+      "outline": {
+        "bg": { "$value": "{color.white}" },
+        "bg-hover": { "$value": "{color.slate.50}" },
+        "border": { "$value": "{color.slate.200}" },
+        "border-hover": { "$value": "{color.slate.300}" },
+        "fg": { "$value": "{color.slate.900}" }
+      },
+      "destructive": {
+        "bg": { "$value": "{color.red.600}", "$description": "4.83:1 with white" },
+        "bg-hover": { "$value": "{color.red.700}" },
+        "fg": { "$value": "{color.white}" },
+        "soft-bg": { "$value": "{color.red.50}" },
+        "soft-fg": { "$value": "{color.red.700}" }
+      },
+      "disabled": {
+        "bg": { "$value": "{color.slate.100}" },
+        "fg": { "$value": "{color.slate.400}" },
+        "border": { "$value": "{color.slate.200}" }
+      },
+      "selected": {
+        "bg": { "$value": "{color.blue.50}" },
+        "fg": { "$value": "{color.blue.700}" },
+        "indicator": { "$value": "{color.blue.500}" }
+      }
+    },
+    "status": {
+      "$description": "Feedback semantics: solid for icons/dots, fg for text on white or tinted bg",
+      "success": {
+        "solid": { "$value": "{color.green.500}" },
+        "fg": { "$value": "{color.green.700}", "$description": "5.0:1 on white" },
+        "bg": { "$value": "{color.green.50}" },
+        "border": { "$value": "{color.green.200}" }
+      },
+      "warning": {
+        "solid": { "$value": "{color.amber.500}" },
+        "fg": { "$value": "{color.amber.700}", "$description": "5.0:1 on white" },
+        "bg": { "$value": "{color.amber.50}" },
+        "border": { "$value": "{color.amber.200}" }
+      },
+      "error": {
+        "solid": { "$value": "{color.red.500}" },
+        "fg": { "$value": "{color.red.700}", "$description": "6.5:1 on white" },
+        "bg": { "$value": "{color.red.50}" },
+        "border": { "$value": "{color.red.200}" }
+      },
+      "info": {
+        "solid": { "$value": "{color.blue.500}" },
+        "fg": { "$value": "{color.blue.700}" },
+        "bg": { "$value": "{color.blue.50}" },
+        "border": { "$value": "{color.blue.200}" }
+      }
+    },
+    "state": {
+      "$description": "VPN connection states — the single source for buttons, dots, banners and node status",
+      "connected": { "$value": "{color.green.500}" },
+      "connected-fg": { "$value": "{color.green.700}" },
+      "connected-bg": { "$value": "{color.green.50}" },
+      "connecting": { "$value": "{color.blue.500}" },
+      "connecting-fg": { "$value": "{color.blue.700}" },
+      "connecting-bg": { "$value": "{color.blue.50}" },
+      "disconnected": { "$value": "{color.slate.400}" },
+      "disconnected-fg": { "$value": "{color.slate.600}" },
+      "disconnected-bg": { "$value": "{color.slate.100}" },
+      "error": { "$value": "{color.red.500}" },
+      "error-fg": { "$value": "{color.red.700}" },
+      "error-bg": { "$value": "{color.red.50}" }
+    },
+    "latency": {
+      "$description": "Latency colouring for signal bars and numbers: <80ms good, 80–180 fair, >180 poor",
+      "good": { "$value": "{color.green.500}" },
+      "good-fg": { "$value": "{color.green.700}" },
+      "fair": { "$value": "{color.amber.500}" },
+      "fair-fg": { "$value": "{color.amber.700}" },
+      "poor": { "$value": "{color.red.500}" },
+      "poor-fg": { "$value": "{color.red.700}" },
+      "idle": { "$value": "{color.slate.300}" }
+    },
+    "scene": {
+      "$description": "Route scene tags (线路场景)",
+      "auto": {
+        "solid": { "$value": "{color.blue.500}" },
+        "fg": { "$value": "{color.blue.700}" },
+        "bg": { "$value": "{color.blue.50}" }
+      },
+      "game": {
+        "solid": { "$value": "{color.mint.500}" },
+        "fg": { "$value": "{color.mint.800}", "$description": "mint-800 on mint-50 = 5.56:1 (mint-700 only 4.08:1)" },
+        "bg": { "$value": "{color.mint.50}" }
+      },
+      "ai": {
+        "solid": { "$value": "{color.purple.500}" },
+        "fg": { "$value": "{color.purple.700}" },
+        "bg": { "$value": "{color.purple.50}" }
+      },
+      "exchange": {
+        "solid": { "$value": "{color.amber.500}" },
+        "fg": { "$value": "{color.amber.700}" },
+        "bg": { "$value": "{color.amber.50}" }
+      }
+    },
+    "chart": {
+      "$description": "Categorical data-viz sequence",
+      "1": { "$value": "{color.blue.500}" },
+      "2": { "$value": "{color.cyan.500}" },
+      "3": { "$value": "{color.purple.500}" },
+      "4": { "$value": "{color.mint.500}" },
+      "5": { "$value": "{color.amber.500}" },
+      "6": { "$value": "{color.pink.500}" },
+      "grid": { "$value": "{color.slate.100}" },
+      "axis": { "$value": "{color.slate.400}" }
+    },
+    "ring": {
+      "focus": { "$value": "{color.alpha.blue-32}", "$description": "3px focus ring colour" },
+      "error": { "$value": "rgba(239, 68, 68, 0.28)" }
+    }
+  },
+  "gradient": {
+    "$type": "string",
+    "$description": "CSS gradient strings (135° unless noted)",
+    "primary": { "$value": "linear-gradient(135deg, #1677FF 0%, #4096FF 100%)" },
+    "blue-light": { "$value": "linear-gradient(135deg, #4DA3FF 0%, #80D4FF 100%)" },
+    "cyan-blue": { "$value": "linear-gradient(135deg, #00C6FF 0%, #36E0FF 100%)" },
+    "blue-purple": { "$value": "linear-gradient(135deg, #6C5CE7 0%, #A29BFE 100%)" },
+    "green-cyan": { "$value": "linear-gradient(135deg, #00D084 0%, #00E6BB 100%)" },
+    "hero": { "$value": "linear-gradient(135deg, #1677FF 0%, #00C6FF 100%)" },
+    "connected": { "$value": "radial-gradient(120% 120% at 30% 20%, #3D8BFF 0%, #1677FF 60%, #0158C9 100%)" },
+    "canvas-glow": { "$value": "radial-gradient(60% 50% at 50% 0%, rgba(22, 119, 255, 0.10) 0%, rgba(0, 198, 255, 0.04) 45%, rgba(250, 251, 255, 0) 100%)" }
+  }
+}

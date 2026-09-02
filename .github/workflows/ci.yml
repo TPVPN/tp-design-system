@@ -1,0 +1,76 @@
+# Continuous integration: build every package, type-check, and make sure the
+# committed generated outputs (packages/tokens/dist, packages/brand/dist) are
+# up to date with their sources.
+
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: ['**']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Build · typecheck · verify generated outputs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build tokens
+        run: pnpm build:tokens
+
+      - name: Build brand assets
+        run: pnpm build:brand
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Build site
+        run: pnpm build:site
+        env:
+          BASE_PATH: /
+
+      - name: Verify generated outputs are committed
+        run: |
+          if ! git diff --exit-code --stat -- packages/tokens/dist packages/brand/dist; then
+            echo "::error::Generated outputs are out of date."
+            echo ""
+            echo "packages/tokens/dist and/or packages/brand/dist differ from what the"
+            echo "sources produce. Rebuild locally and commit the results:"
+            echo ""
+            echo "    pnpm build:tokens && pnpm build:brand"
+            echo "    git add packages/tokens/dist packages/brand/dist"
+            echo ""
+            exit 1
+          fi
+          untracked="$(git ls-files --others --exclude-standard -- packages/tokens/dist packages/brand/dist)"
+          if [ -n "$untracked" ]; then
+            echo "::error::New generated files are not committed:"
+            echo "$untracked"
+            echo ""
+            echo "Run: git add packages/tokens/dist packages/brand/dist"
+            exit 1
+          fi
+          echo "Generated outputs are up to date."

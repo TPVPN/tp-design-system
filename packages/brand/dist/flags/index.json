@@ -1,0 +1,250 @@
+{
+  "ae": {
+    "en": "United Arab Emirates",
+    "zh": "阿联酋"
+  },
+  "ar": {
+    "en": "Argentina",
+    "zh": "阿根廷"
+  },
+  "at": {
+    "en": "Austria",
+    "zh": "奥地利"
+  },
+  "au": {
+    "en": "Australia",
+    "zh": "澳大利亚"
+  },
+  "bd": {
+    "en": "Bangladesh",
+    "zh": "孟加拉国"
+  },
+  "be": {
+    "en": "Belgium",
+    "zh": "比利时"
+  },
+  "br": {
+    "en": "Brazil",
+    "zh": "巴西"
+  },
+  "ca": {
+    "en": "Canada",
+    "zh": "加拿大"
+  },
+  "ch": {
+    "en": "Switzerland",
+    "zh": "瑞士"
+  },
+  "cl": {
+    "en": "Chile",
+    "zh": "智利"
+  },
+  "cn": {
+    "en": "China",
+    "zh": "中国"
+  },
+  "co": {
+    "en": "Colombia",
+    "zh": "哥伦比亚"
+  },
+  "cz": {
+    "en": "Czechia",
+    "zh": "捷克"
+  },
+  "de": {
+    "en": "Germany",
+    "zh": "德国"
+  },
+  "dk": {
+    "en": "Denmark",
+    "zh": "丹麦"
+  },
+  "eg": {
+    "en": "Egypt",
+    "zh": "埃及"
+  },
+  "es": {
+    "en": "Spain",
+    "zh": "西班牙"
+  },
+  "fi": {
+    "en": "Finland",
+    "zh": "芬兰"
+  },
+  "fr": {
+    "en": "France",
+    "zh": "法国"
+  },
+  "gb": {
+    "en": "United Kingdom",
+    "zh": "英国"
+  },
+  "gr": {
+    "en": "Greece",
+    "zh": "希腊"
+  },
+  "hk": {
+    "en": "Hong Kong, China",
+    "zh": "中国香港"
+  },
+  "hu": {
+    "en": "Hungary",
+    "zh": "匈牙利"
+  },
+  "id": {
+    "en": "Indonesia",
+    "zh": "印度尼西亚"
+  },
+  "ie": {
+    "en": "Ireland",
+    "zh": "爱尔兰"
+  },
+  "il": {
+    "en": "Israel",
+    "zh": "以色列"
+  },
+  "in": {
+    "en": "India",
+    "zh": "印度"
+  },
+  "it": {
+    "en": "Italy",
+    "zh": "意大利"
+  },
+  "jp": {
+    "en": "Japan",
+    "zh": "日本"
+  },
+  "ke": {
+    "en": "Kenya",
+    "zh": "肯尼亚"
+  },
+  "kh": {
+    "en": "Cambodia",
+    "zh": "柬埔寨"
+  },
+  "kr": {
+    "en": "South Korea",
+    "zh": "韩国"
+  },
+  "kz": {
+    "en": "Kazakhstan",
+    "zh": "哈萨克斯坦"
+  },
+  "la": {
+    "en": "Laos",
+    "zh": "老挝"
+  },
+  "lk": {
+    "en": "Sri Lanka",
+    "zh": "斯里兰卡"
+  },
+  "lu": {
+    "en": "Luxembourg",
+    "zh": "卢森堡"
+  },
+  "mm": {
+    "en": "Myanmar",
+    "zh": "缅甸"
+  },
+  "mo": {
+    "en": "Macao, China",
+    "zh": "中国澳门"
+  },
+  "mx": {
+    "en": "Mexico",
+    "zh": "墨西哥"
+  },
+  "my": {
+    "en": "Malaysia",
+    "zh": "马来西亚"
+  },
+  "ng": {
+    "en": "Nigeria",
+    "zh": "尼日利亚"
+  },
+  "nl": {
+    "en": "Netherlands",
+    "zh": "荷兰"
+  },
+  "no": {
+    "en": "Norway",
+    "zh": "挪威"
+  },
+  "np": {
+    "en": "Nepal",
+    "zh": "尼泊尔"
+  },
+  "nz": {
+    "en": "New Zealand",
+    "zh": "新西兰"
+  },
+  "pe": {
+    "en": "Peru",
+    "zh": "秘鲁"
+  },
+  "ph": {
+    "en": "Philippines",
+    "zh": "菲律宾"
+  },
+  "pk": {
+    "en": "Pakistan",
+    "zh": "巴基斯坦"
+  },
+  "pl": {
+    "en": "Poland",
+    "zh": "波兰"
+  },
+  "pt": {
+    "en": "Portugal",
+    "zh": "葡萄牙"
+  },
+  "ro": {
+    "en": "Romania",
+    "zh": "罗马尼亚"
+  },
+  "ru": {
+    "en": "Russia",
+    "zh": "俄罗斯"
+  },
+  "sa": {
+    "en": "Saudi Arabia",
+    "zh": "沙特阿拉伯"
+  },
+  "se": {
+    "en": "Sweden",
+    "zh": "瑞典"
+  },
+  "sg": {
+    "en": "Singapore",
+    "zh": "新加坡"
+  },
+  "th": {
+    "en": "Thailand",
+    "zh": "泰国"
+  },
+  "tr": {
+    "en": "Türkiye",
+    "zh": "土耳其"
+  },
+  "tw": {
+    "en": "Taiwan, China",
+    "zh": "中国台湾"
+  },
+  "ua": {
+    "en": "Ukraine",
+    "zh": "乌克兰"
+  },
+  "us": {
+    "en": "United States",
+    "zh": "美国"
+  },
+  "vn": {
+    "en": "Vietnam",
+    "zh": "越南"
+  },
+  "za": {
+    "en": "South Africa",
+    "zh": "南非"
+  }
+}

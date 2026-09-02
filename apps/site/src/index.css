@@ -1,0 +1,213 @@
+/* Fonts first (self-hosted variable fonts via @fontsource) */
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/noto-sans-devanagari';
+
+/* The UI kit brings Tailwind + the TP token theme (+ shadcn variable mapping) */
+@import '@tpvpn/ui/styles.css';
+/* Scan the kit's sources so its utility classes are generated for this app too */
+@source '../../../packages/ui/src';
+
+/* ------------------------------------------------------------------ */
+/* Site-only theme additions                                           */
+/* ------------------------------------------------------------------ */
+@theme {
+  --animate-page-in: page-in var(--duration-moderate, 300ms) var(--ease-decelerate, cubic-bezier(0, 0, 0.2, 1)) both;
+  --animate-fade-in: fade-in var(--duration-quick, 150ms) ease-out both;
+  --animate-glow-breathe: glow-breathe 7s ease-in-out infinite;
+}
+
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes glow-breathe {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.04); }
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scrollbar-gutter: stable;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+  body {
+    min-height: 100dvh;
+    background: var(--color-bg-canvas, #fafbff);
+    color: var(--color-fg-primary, #0f172a);
+    font-family: var(--font-sans);
+    font-feature-settings: 'cv11', 'ss01';
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+  :lang(hi) { font-family: var(--font-devanagari, var(--font-sans)); }
+  :lang(zh-HK), :lang(zh-Hant) { font-family: var(--font-sans-hk, var(--font-sans)); }
+  ::selection { background: rgb(22 119 255 / 0.18); }
+  h1, h2, h3 { text-wrap: balance; }
+  :focus-visible {
+    outline: 2px solid var(--color-blue-500, #1677ff);
+    outline-offset: 2px;
+  }
+  kbd { font-family: var(--font-sans); }
+
+  /* Scrollbars — thin, slate, no arrows */
+  * { scrollbar-width: thin; scrollbar-color: var(--color-slate-300, #cbd5e1) transparent; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-slate-300, #cbd5e1);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background-color: var(--color-slate-400, #94a3b8); }
+}
+
+/* ------------------------------------------------------------------ */
+/* Utilities                                                           */
+/* ------------------------------------------------------------------ */
+/* Hero backdrop: the token canvas glow (blue → cyan radial) … */
+@utility hero-glow {
+  background-image: var(
+    --gradient-canvas-glow,
+    radial-gradient(60% 50% at 50% 0%, rgb(22 119 255 / 0.1) 0%, rgb(0 198 255 / 0.04) 45%, rgb(250 251 255 / 0) 100%)
+  );
+}
+/* … plus a faint 24px grid that fades out towards the edges */
+@utility hero-grid {
+  background-image:
+    linear-gradient(to right, rgb(15 23 42 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(15 23 42 / 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: center top;
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 0%, #000 15%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 0%, #000 15%, transparent 100%);
+}
+@utility bg-checker {
+  background-color: #fff;
+  background-image:
+    linear-gradient(45deg, #edf1f5 25%, transparent 25%),
+    linear-gradient(-45deg, #edf1f5 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #edf1f5 75%),
+    linear-gradient(-45deg, transparent 75%, #edf1f5 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+}
+@utility bg-gradient-primary {
+  background-image: var(--gradient-primary, linear-gradient(135deg, #1677ff 0%, #4096ff 100%));
+}
+@utility bg-gradient-hero {
+  background-image: var(--gradient-hero, linear-gradient(135deg, #1677ff 0%, #00c6ff 100%));
+}
+@utility bg-gradient-connected {
+  background-image: var(--gradient-connected, radial-gradient(120% 120% at 30% 20%, #3d8bff 0%, #1677ff 60%, #0158c9 100%));
+}
+/* Route transition: fade in + rise 12px (reduced motion → 150ms fade) */
+@utility page-enter {
+  animation: var(--animate-page-in);
+  @media (prefers-reduced-motion: reduce) {
+    animation: var(--animate-fade-in);
+  }
+}
+@utility eyebrow {
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+}
+/* Hairline inner stroke used on flags / avatars */
+@utility ring-hairline {
+  box-shadow: inset 0 0 0 1px rgb(15 23 42 / 0.08);
+}
+
+/* ------------------------------------------------------------------ */
+/* Components: documentation prose & code                              */
+/* ------------------------------------------------------------------ */
+@layer components {
+  .doc-prose {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-fg-secondary, #475569);
+  }
+  .doc-prose > * + * { margin-top: 1em; }
+  .doc-prose strong { color: var(--color-fg-primary, #0f172a); font-weight: 600; }
+  .doc-prose a {
+    color: var(--color-fg-link, #046bef);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in oklab, currentColor 35%, transparent);
+    transition: color 200ms var(--ease-standard, ease), text-decoration-color 200ms var(--ease-standard, ease);
+  }
+  .doc-prose a:hover { color: var(--color-fg-link-hover, #0158c9); text-decoration-color: currentColor; }
+  .doc-prose ul, .doc-prose ol { padding-left: 1.4em; }
+  .doc-prose ul { list-style: disc; }
+  .doc-prose ol { list-style: decimal; }
+  .doc-prose li + li { margin-top: 0.35em; }
+  .doc-prose li::marker { color: var(--color-fg-muted, #64748b); }
+  .doc-prose code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    padding: 0.15em 0.4em;
+    border-radius: 6px;
+    background: var(--color-bg-surface-sunken, #f1f5f9);
+    color: var(--color-fg-primary, #0f172a);
+  }
+  .doc-prose pre code { padding: 0; background: none; font-size: inherit; }
+  /* Inline code in prose, descriptions and callouts must never widen the page on narrow screens (BRIEF §6.5) */
+  code:not(pre code):not(.code-block code) { overflow-wrap: anywhere; }
+  .doc-prose blockquote {
+    border-left: 2px solid var(--color-border-strong, #cbd5e1);
+    padding-left: 1em;
+    color: var(--color-fg-muted, #64748b);
+  }
+  .doc-prose h4 { margin-top: 1.75em; font-weight: 600; color: var(--color-fg-primary, #0f172a); }
+  .doc-prose hr { border: 0; border-top: 1px solid var(--color-border-default, #e2e8f0); margin: 2em 0; }
+  .doc-prose table { width: 100%; font-size: 0.875rem; border-collapse: collapse; }
+  .doc-prose th {
+    text-align: left; font-weight: 600; color: var(--color-fg-primary, #0f172a);
+    border-bottom: 1px solid var(--color-border-default, #e2e8f0); padding: 0.5em 0.75em;
+  }
+  .doc-prose td { border-bottom: 1px solid var(--color-border-subtle, #f1f5f9); padding: 0.5em 0.75em; vertical-align: top; }
+  .doc-prose img { border-radius: var(--radius-lg, 16px); }
+
+  /* Shiki output */
+  .code-block pre.shiki {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+    background: transparent !important;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 20px;
+    tab-size: 2;
+  }
+  .code-block pre.shiki code { display: block; min-width: max-content; counter-reset: line; }
+  .code-block[data-line-numbers='true'] .line::before {
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    width: 2ch;
+    margin-right: 1.5ch;
+    text-align: right;
+    color: var(--color-fg-placeholder, #94a3b8);
+    user-select: none;
+  }
+}

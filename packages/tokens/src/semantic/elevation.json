@@ -1,0 +1,54 @@
+{
+  "elevation": {
+    "$type": "shadow",
+    "$description": "Ambient shadows tinted with slate-900 (rgb 15 23 42). Higher levels = larger blur, lower opacity per layer.",
+    "level-0": { "$value": [], "$description": "Flat" },
+    "level-1": {
+      "$value": [
+        { "color": "rgba(15, 23, 42, 0.06)", "offsetX": "0px", "offsetY": "1px", "blur": "2px", "spread": "0px" },
+        { "color": "rgba(15, 23, 42, 0.04)", "offsetX": "0px", "offsetY": "1px", "blur": "3px", "spread": "0px" }
+      ],
+      "$description": "Resting cards"
+    },
+    "level-2": {
+      "$value": [
+        { "color": "rgba(15, 23, 42, 0.08)", "offsetX": "0px", "offsetY": "4px", "blur": "12px", "spread": "0px" },
+        { "color": "rgba(15, 23, 42, 0.04)", "offsetX": "0px", "offsetY": "1px", "blur": "3px", "spread": "0px" }
+      ],
+      "$description": "Node cards, dropdowns, hover lift"
+    },
+    "level-3": {
+      "$value": [
+        { "color": "rgba(15, 23, 42, 0.12)", "offsetX": "0px", "offsetY": "12px", "blur": "32px", "spread": "0px" },
+        { "color": "rgba(15, 23, 42, 0.06)", "offsetX": "0px", "offsetY": "2px", "blur": "6px", "spread": "0px" }
+      ],
+      "$description": "Popovers, sheets"
+    },
+    "level-4": {
+      "$value": [
+        { "color": "rgba(15, 23, 42, 0.18)", "offsetX": "0px", "offsetY": "24px", "blur": "64px", "spread": "0px" },
+        { "color": "rgba(15, 23, 42, 0.08)", "offsetX": "0px", "offsetY": "4px", "blur": "12px", "spread": "0px" }
+      ],
+      "$description": "Modals"
+    },
+    "brand-glow": {
+      "$value": [{ "color": "rgba(22, 119, 255, 0.35)", "offsetX": "0px", "offsetY": "12px", "blur": "32px", "spread": "0px" }],
+      "$description": "Primary CTA hover, connected button"
+    },
+    "brand-glow-lg": {
+      "$value": [{ "color": "rgba(22, 119, 255, 0.45)", "offsetX": "0px", "offsetY": "20px", "blur": "60px", "spread": "0px" }],
+      "$description": "Connected connection button"
+    },
+    "success-glow": {
+      "$value": [{ "color": "rgba(34, 197, 94, 0.30)", "offsetX": "0px", "offsetY": "12px", "blur": "32px", "spread": "0px" }]
+    },
+    "focus": {
+      "$value": [{ "color": "rgba(22, 119, 255, 0.32)", "offsetX": "0px", "offsetY": "0px", "blur": "0px", "spread": "3px" }],
+      "$description": "Keyboard focus ring"
+    },
+    "inset-hairline": {
+      "$value": [{ "color": "rgba(15, 23, 42, 0.08)", "offsetX": "0px", "offsetY": "0px", "blur": "0px", "spread": "1px", "inset": true }],
+      "$description": "1px inner stroke (flags, avatars)"
+    }
+  }
+}

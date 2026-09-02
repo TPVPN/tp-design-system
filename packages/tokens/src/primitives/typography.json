@@ -1,0 +1,83 @@
+{
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "sans": {
+        "$value": ["Inter Variable", "Inter", "-apple-system", "BlinkMacSystemFont", "SF Pro Text", "Segoe UI", "Roboto", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "sans-serif"],
+        "$description": "Primary UI face. Inter (OFL); SF Pro is the platform-native equivalent on Apple OSes."
+      },
+      "sans-hk": {
+        "$value": ["Inter Variable", "Inter", "-apple-system", "PingFang HK", "PingFang TC", "Hiragino Sans CNS", "Microsoft JhengHei UI", "Noto Sans HK", "Noto Sans TC", "sans-serif"],
+        "$description": "Traditional Chinese (Hong Kong) fallback chain"
+      },
+      "devanagari": {
+        "$value": ["Noto Sans Devanagari Variable", "Noto Sans Devanagari", "Nirmala UI", "Kohinoor Devanagari", "sans-serif"],
+        "$description": "Hindi"
+      },
+      "mono": {
+        "$value": ["ui-monospace", "SF Mono", "Menlo", "Consolas", "Roboto Mono", "monospace"],
+        "$description": "IP addresses, keys, redeem codes, code"
+      }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular": { "$value": 400 },
+      "medium": { "$value": 500 },
+      "semibold": { "$value": 600 },
+      "bold": { "$value": 700 },
+      "extrabold": { "$value": 800 }
+    },
+    "size": {
+      "$type": "dimension",
+      "11": { "$value": "11px" },
+      "12": { "$value": "12px" },
+      "13": { "$value": "13px" },
+      "14": { "$value": "14px" },
+      "15": { "$value": "15px" },
+      "16": { "$value": "16px" },
+      "17": { "$value": "17px" },
+      "18": { "$value": "18px" },
+      "20": { "$value": "20px" },
+      "24": { "$value": "24px" },
+      "28": { "$value": "28px" },
+      "32": { "$value": "32px" },
+      "40": { "$value": "40px" },
+      "48": { "$value": "48px" },
+      "56": { "$value": "56px" },
+      "64": { "$value": "64px" },
+      "72": { "$value": "72px" }
+    },
+    "line-height": {
+      "$type": "dimension",
+      "14": { "$value": "14px" },
+      "16": { "$value": "16px" },
+      "18": { "$value": "18px" },
+      "20": { "$value": "20px" },
+      "22": { "$value": "22px" },
+      "24": { "$value": "24px" },
+      "26": { "$value": "26px" },
+      "28": { "$value": "28px" },
+      "32": { "$value": "32px" },
+      "40": { "$value": "40px" },
+      "44": { "$value": "44px" },
+      "52": { "$value": "52px" },
+      "68": { "$value": "68px" },
+      "76": { "$value": "76px" }
+    },
+    "line-height-ratio": {
+      "$type": "number",
+      "cjk-body": { "$value": 1.6, "$description": "Chinese body copy line-height" },
+      "latin-body": { "$value": 1.5 },
+      "tight": { "$value": 1.1 }
+    },
+    "letter-spacing": {
+      "$type": "dimension",
+      "tighter": { "$value": "-0.025em" },
+      "tight": { "$value": "-0.02em" },
+      "snug": { "$value": "-0.01em" },
+      "cozy": { "$value": "-0.005em" },
+      "normal": { "$value": "0em" },
+      "wide": { "$value": "0.06em" }
+    }
+  }
+}

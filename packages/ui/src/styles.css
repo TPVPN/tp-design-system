@@ -1,0 +1,71 @@
+/*
+ * @tpvpn/ui — entry stylesheet.
+ * Consumers import '@tpvpn/ui/styles.css' once; it pulls in Tailwind v4, the TP token theme,
+ * the shadcn bridge and the base layer. Light mode only.
+ */
+@import 'tailwindcss';
+@import './theme.css';
+@source './';
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-border-default);
+  }
+
+  html {
+    color-scheme: light;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--color-bg-canvas);
+    color: var(--color-fg-primary);
+    font-family: var(--font-sans);
+    font-feature-settings: 'cv11', 'ss01', 'ss03';
+  }
+
+  :lang(zh-Hant),
+  :lang(zh-HK) {
+    font-family: var(--font-sans-hk, var(--font-sans));
+  }
+
+  :lang(hi) {
+    font-family: var(--font-devanagari, var(--font-sans));
+  }
+
+  ::selection {
+    background: var(--color-blue-100);
+  }
+
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']) {
+    cursor: pointer;
+  }
+}
+
+/* Keyboard focus ring: 0 0 0 3px rgb(22 119 255 / 0.32) */
+@utility focus-ring {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* Numbers are always tabular (speeds, timers, latency, prices). */
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Reduced motion: everything degrades to a 150ms fade (BRIEF §2.7). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 150ms !important;
+    scroll-behavior: auto !important;
+  }
+}

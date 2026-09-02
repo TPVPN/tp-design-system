@@ -1,0 +1,95 @@
+/*
+ * @tpvpn/ui — theme bridge
+ * Maps the shadcn/ui CSS-variable contract onto TP VPN design tokens
+ * (the Tailwind v4 @theme emitted by @tpvpn/tokens). Light mode only:
+ * there is intentionally no dark variant anywhere in this package.
+ */
+@import '@tpvpn/tokens/tailwind';
+@import 'tw-animate-css';
+
+:root {
+  color-scheme: light;
+
+  /* shadcn/ui variables → TP semantic tokens */
+  --background: var(--color-bg-canvas);
+  --foreground: var(--color-fg-primary);
+  --card: var(--color-bg-surface);
+  --card-foreground: var(--color-fg-primary);
+  --popover: var(--color-bg-surface-raised);
+  --popover-foreground: var(--color-fg-primary);
+  --primary: var(--color-action-primary-bg);
+  --primary-foreground: var(--color-fg-on-brand);
+  --secondary: var(--color-action-secondary-bg);
+  --secondary-foreground: var(--color-action-secondary-fg);
+  --muted: var(--color-bg-surface-sunken);
+  --muted-foreground: var(--color-fg-muted);
+  --accent: var(--color-bg-brand-soft);
+  --accent-foreground: var(--color-fg-brand-strong);
+  --destructive: var(--color-action-destructive-bg);
+  --destructive-foreground: var(--color-action-destructive-fg);
+  --border: var(--color-border-default);
+  --input: var(--color-border-default);
+  --ring: var(--color-blue-500);
+  /* shadcn's base radius (BRIEF §4) — kept for third-party shadcn blocks; the kit itself uses TP radii directly. */
+  --radius: 0.75rem;
+  --chart-1: var(--color-chart-1);
+  --chart-2: var(--color-chart-2);
+  --chart-3: var(--color-chart-3);
+  --chart-4: var(--color-chart-4);
+  --chart-5: var(--color-chart-5);
+}
+
+/*
+ * Expose the shadcn variables as Tailwind colours (bg-primary, text-muted-foreground …).
+ * Radii are NOT aliased on purpose: components use TP radii directly
+ * (rounded-md = 12px controls, rounded-lg = 16px cards, rounded-2xl = 24px dialogs).
+ * Chart colours already exist as --color-chart-1…6 from @tpvpn/tokens.
+ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+/* Component animations that are not part of tw-animate-css. */
+@theme {
+  --animate-tp-spin: tp-spin 1s steps(12, end) infinite;
+  --animate-tp-breathe: tp-breathe 2.4s ease-in-out infinite;
+  --animate-tp-ring: tp-ring 1.2s linear infinite;
+
+  @keyframes tp-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes tp-breathe {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+  }
+  @keyframes tp-ring {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

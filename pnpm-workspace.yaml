@@ -1,0 +1,9 @@
+packages:
+  - apps/*
+  - packages/*
+# pnpm 11 strictDepBuilds：显式审阅依赖的构建脚本
+allowBuilds:
+  esbuild: true
+  sharp: true
+  style-dictionary: false
+  '@bundled-es-modules/glob': false
