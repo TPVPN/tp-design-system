@@ -133,7 +133,7 @@
     <color name="tp_color_fg_primary">#FF0F172A</color> <!-- Headings and body. 17.9:1 on white -->
     <color name="tp_color_fg_secondary">#FF475569</color> <!-- Supporting text. 7.6:1 -->
     <color name="tp_color_fg_muted">#FF64748B</color> <!-- Captions, metadata. 4.76:1 (AA floor) -->
-    <color name="tp_color_fg_placeholder">#FF94A3B8</color> <!-- Placeholders &amp; disabled only — not AA -->
+    <color name="tp_color_fg_placeholder">#FF64748B</color> <!-- Readable input hints on light surfaces; disabled text uses fg.disabled -->
     <color name="tp_color_fg_disabled">#FF94A3B8</color>
     <color name="tp_color_fg_brand">#FF046BEF</color> <!-- Brand text, links. 4.82:1 -->
     <color name="tp_color_fg_brand_strong">#FF0158C9</color>
@@ -272,7 +272,7 @@
     <color name="tp_input_border_hover">#FFCBD5E1</color>
     <color name="tp_input_border_focus">#FF1677FF</color>
     <color name="tp_input_fg">#FF0F172A</color>
-    <color name="tp_input_placeholder">#FF94A3B8</color>
+    <color name="tp_input_placeholder">#FF64748B</color>
     <color name="tp_search_bar_bg">#FFFFFFFF</color>
     <color name="tp_search_bar_border">#FFE2E8F0</color>
     <color name="tp_search_bar_icon_fg">#FF64748B</color>

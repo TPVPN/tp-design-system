@@ -7,7 +7,7 @@
   "scripts": {
     "predev": "node scripts/sync-assets.mjs",
     "dev": "vite --port 5180",
-    "prebuild": "node scripts/sync-assets.mjs",
+    "prebuild": "node scripts/sync-assets.mjs && node scripts/build-reference.mjs",
     "build": "tsc --noEmit -p tsconfig.json && vite build",
     "postbuild": "node scripts/postbuild.mjs",
     "preview": "vite preview --port 5181",

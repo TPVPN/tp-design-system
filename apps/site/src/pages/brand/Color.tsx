@@ -135,7 +135,6 @@ function StatusCard({ id }: { id: (typeof STATUS_ORDER)[number] }) {
           <ContrastBadge fg={PAPER} bg={g.solid} label="白字在 solid 上" />
           <ContrastBadge fg={g.fg} bg={PAPER} label="fg 在白底上" />
         </div>
-        <p className="text-xs leading-5 text-fg-secondary">solid 用于图标与状态点，fg 用于文字（700 阶），bg 用于浅底容器（50 阶）。</p>
       </div>
     </div>
   );
@@ -226,7 +225,7 @@ export default function ColorPage() {
       </Section>
 
       {/* ------------------------------------------------------------ */}
-      <Section id="status" title="状态色" en="Status" description="success / warning / error 取 Tailwind green / amber / red；info 直接复用品牌蓝。每个状态都有 solid（500）、fg（700）、bg（50）三件套。">
+      <Section id="status" title="状态色" en="Status" description="success / warning / error 对应 green / amber / red，info 复用品牌蓝。solid 用于图标与状态点，fg 用于文字，bg 用于浅底容器。">
         <Grid cols={2} gap="md">
           {STATUS_ORDER.map((id) => (
             <StatusCard key={id} id={id} />

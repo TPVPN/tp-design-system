@@ -67,6 +67,8 @@ export const NAV: readonly NavSection[] = [
       { path: '/brand/color', title: '品牌色彩', en: 'Color', description: '主色（含 OKLCH）、5 条 11 阶色带、中性色、状态色、渐变板、70/20/10 使用比例与配色禁忌。' },
       { path: '/brand/typography', title: '字体', en: 'Typography', description: 'Inter 展示、多语言样张、tabular 数字演示与字阶表。' },
       { path: '/brand/voice', title: '语调与文案', en: 'Voice & Tone', description: '原则、可宣称 / 不可宣称能力表、五语言 UI 文案对照。' },
+      { path: '/brand/social', title: '社媒与主视觉', en: 'Social & Main KV', description: '四套 Light Mode KV、可编辑模板、尺寸与版式标准。' },
+      { path: '/brand/ai-guidelines', title: 'AI 设计标准', en: 'AI Design Guidelines', description: '可下载的品牌约束、提示词与 AI Agent 检查清单。' },
     ],
   },
   {
@@ -138,6 +140,9 @@ export const NAV: readonly NavSection[] = [
     topNav: true,
     items: [
       { path: '/platforms', title: '平台接入', en: 'Platforms', description: 'Web（CSS / Tailwind）、Flutter（Dart）、iOS（Swift）、Android（Kotlin / XML）、Figma（Tokens Studio）代码块与文件下载。' },
+      { path: '/platforms/ios', title: 'iOS 组件', en: 'iOS Components', description: '连接、节点、设置与原生 SwiftUI 参考。' },
+      { path: '/platforms/android', title: 'Android 组件', en: 'Android Components', description: 'Material 3 组件、导航与 Compose 参考。' },
+      { path: '/platforms/mobile-motion', title: '移动端交互动效', en: 'Mobile Motion', description: '连接、切换、弹层与减少动态效果的交互实验室。' },
     ],
   },
   {
@@ -149,6 +154,7 @@ export const NAV: readonly NavSection[] = [
     topNav: true,
     items: [
       { path: '/downloads', title: '下载中心', en: 'Downloads', description: '品牌全包、Logo 包、App Icon 包、社交图、Token 全格式、字体、国旗包；每项显示大小与清单。' },
+      { path: '/sitemap', title: '网站地图', en: 'Sitemap', description: '全部规范、组件、平台和素材入口。' },
     ],
   },
   {
@@ -205,6 +211,8 @@ const loaders: Record<string, PageLoader> = {
   '/brand/color': () => import('@/pages/brand/Color'),
   '/brand/typography': () => import('@/pages/brand/Typography'),
   '/brand/voice': () => import('@/pages/brand/Voice'),
+  '/brand/social': () => import('@/pages/brand/Social'),
+  '/brand/ai-guidelines': () => import('@/pages/brand/AIGuidelines'),
 
   '/foundations/color': () => import('@/pages/foundations/Color'),
   '/foundations/typography': () => import('@/pages/foundations/Typography'),
@@ -240,7 +248,11 @@ const loaders: Record<string, PageLoader> = {
   '/patterns/subscription': () => import('@/pages/patterns/Subscription'),
 
   '/platforms': () => import('@/pages/Platforms'),
+  '/platforms/ios': () => import('@/pages/mobile/IOS'),
+  '/platforms/android': () => import('@/pages/mobile/Android'),
+  '/platforms/mobile-motion': () => import('@/pages/mobile/MobileMotion'),
   '/downloads': () => import('@/pages/Downloads'),
+  '/sitemap': () => import('@/pages/Sitemap'),
   '/changelog': () => import('@/pages/Changelog'),
 };
 

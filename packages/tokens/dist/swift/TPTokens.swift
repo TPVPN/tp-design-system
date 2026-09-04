@@ -196,8 +196,8 @@ public enum TPTokens {
     public static let colorFgSecondary = UIColor(red: 0.2784, green: 0.3333, blue: 0.4118, alpha: 1.0)
     /// Captions, metadata. 4.76:1 (AA floor)
     public static let colorFgMuted = UIColor(red: 0.3922, green: 0.4549, blue: 0.5451, alpha: 1.0)
-    /// Placeholders & disabled only — not AA
-    public static let colorFgPlaceholder = UIColor(red: 0.5804, green: 0.6392, blue: 0.7216, alpha: 1.0)
+    /// Readable input hints on light surfaces; disabled text uses fg.disabled
+    public static let colorFgPlaceholder = UIColor(red: 0.3922, green: 0.4549, blue: 0.5451, alpha: 1.0)
     public static let colorFgDisabled = UIColor(red: 0.5804, green: 0.6392, blue: 0.7216, alpha: 1.0)
     /// Brand text, links. 4.82:1
     public static let colorFgBrand = UIColor(red: 0.0157, green: 0.4196, blue: 0.9373, alpha: 1.0)
@@ -541,7 +541,7 @@ public enum TPTokens {
     /// Flat
     public static let elevationLevel0: [TPShadow] = []
     /// Resting cards
-    public static let elevationLevel1: [TPShadow] = [TPShadow(color: UIColor(red: 0.0588, green: 0.0902, blue: 0.1647, alpha: 1.0), opacity: 0.06, offset: CGSize(width: 0, height: 1), radius: 2), TPShadow(color: UIColor(red: 0.0588, green: 0.0902, blue: 0.1647, alpha: 1.0), opacity: 0.04, offset: CGSize(width: 0, height: 1), radius: 3)]
+    public static let elevationLevel1: [TPShadow] = [TPShadow(color: UIColor(red: 0.0588, green: 0.0902, blue: 0.1647, alpha: 1.0), opacity: 0.04, offset: CGSize(width: 0, height: 1), radius: 3)]
     /// Node cards, dropdowns, hover lift
     public static let elevationLevel2: [TPShadow] = [TPShadow(color: UIColor(red: 0.0588, green: 0.0902, blue: 0.1647, alpha: 1.0), opacity: 0.08, offset: CGSize(width: 0, height: 4), radius: 12), TPShadow(color: UIColor(red: 0.0588, green: 0.0902, blue: 0.1647, alpha: 1.0), opacity: 0.04, offset: CGSize(width: 0, height: 1), radius: 3)]
     /// Popovers, sheets
@@ -549,9 +549,9 @@ public enum TPTokens {
     /// Modals
     public static let elevationLevel4: [TPShadow] = [TPShadow(color: UIColor(red: 0.0588, green: 0.0902, blue: 0.1647, alpha: 1.0), opacity: 0.18, offset: CGSize(width: 0, height: 24), radius: 64), TPShadow(color: UIColor(red: 0.0588, green: 0.0902, blue: 0.1647, alpha: 1.0), opacity: 0.08, offset: CGSize(width: 0, height: 4), radius: 12)]
     /// Primary CTA hover, connected button
-    public static let elevationBrandGlow: [TPShadow] = [TPShadow(color: UIColor(red: 0.0863, green: 0.4667, blue: 1.0, alpha: 1.0), opacity: 0.35, offset: CGSize(width: 0, height: 12), radius: 32)]
+    public static let elevationBrandGlow: [TPShadow] = [TPShadow(color: UIColor(red: 0.0863, green: 0.4667, blue: 1.0, alpha: 1.0), opacity: 0.18, offset: CGSize(width: 0, height: 8), radius: 24)]
     /// Connected connection button
-    public static let elevationBrandGlowLg: [TPShadow] = [TPShadow(color: UIColor(red: 0.0863, green: 0.4667, blue: 1.0, alpha: 1.0), opacity: 0.45, offset: CGSize(width: 0, height: 20), radius: 60)]
+    public static let elevationBrandGlowLg: [TPShadow] = [TPShadow(color: UIColor(red: 0.0863, green: 0.4667, blue: 1.0, alpha: 1.0), opacity: 0.24, offset: CGSize(width: 0, height: 16), radius: 48)]
     public static let elevationSuccessGlow: [TPShadow] = [TPShadow(color: UIColor(red: 0.1333, green: 0.7725, blue: 0.3686, alpha: 1.0), opacity: 0.3, offset: CGSize(width: 0, height: 12), radius: 32)]
     /// Keyboard focus ring
     public static let elevationFocus: [TPShadow] = [TPShadow(color: UIColor(red: 0.0863, green: 0.4667, blue: 1.0, alpha: 1.0), opacity: 0.32, offset: CGSize(width: 0, height: 0), radius: 0, spread: 3)]
@@ -592,7 +592,7 @@ public enum TPTokens {
     /// 小标签 / Tab
     public static let typographyLabelSm = TPTextStyle(size: 12, lineHeight: 16, weight: .medium, tracking: 0)
     /// 辅助说明
-    public static let typographyCaption = TPTextStyle(size: 12, lineHeight: 18, weight: .regular, tracking: 0)
+    public static let typographyCaption = TPTextStyle(size: 13, lineHeight: 20, weight: .regular, tracking: 0)
     /// text-transform: uppercase
     /// 分组小标（大写）
     public static let typographyOverline = TPTextStyle(size: 11, lineHeight: 16, weight: .semibold, tracking: 0.66)
@@ -643,7 +643,7 @@ public enum TPTokens {
     public static let connectionButtonConnectedFg = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     public static let connectionButtonConnectedRing = UIColor(red: 0.0863, green: 0.4667, blue: 1.0, alpha: 0.16)
     // connection-button.connected-gradient (CSS gradient — build a CAGradientLayer): radial-gradient(120% 120% at 30% 20%, #3D8BFF 0%, #1677FF 60%, #0158C9 100%)
-    public static let connectionButtonConnectedShadow: [TPShadow] = [TPShadow(color: UIColor(red: 0.0863, green: 0.4667, blue: 1.0, alpha: 1.0), opacity: 0.45, offset: CGSize(width: 0, height: 20), radius: 60)]
+    public static let connectionButtonConnectedShadow: [TPShadow] = [TPShadow(color: UIColor(red: 0.0863, green: 0.4667, blue: 1.0, alpha: 1.0), opacity: 0.24, offset: CGSize(width: 0, height: 16), radius: 48)]
     public static let connectionButtonDuration: TimeInterval = 1.2
 
     // MARK: - node-card
@@ -652,7 +652,7 @@ public enum TPTokens {
     public static let nodeCardGap: CGFloat = 12
     public static let nodeCardBg = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     public static let nodeCardBorder = UIColor(red: 0.8863, green: 0.9098, blue: 0.9412, alpha: 1.0)
-    public static let nodeCardShadow: [TPShadow] = [TPShadow(color: UIColor(red: 0.0588, green: 0.0902, blue: 0.1647, alpha: 1.0), opacity: 0.06, offset: CGSize(width: 0, height: 1), radius: 2), TPShadow(color: UIColor(red: 0.0588, green: 0.0902, blue: 0.1647, alpha: 1.0), opacity: 0.04, offset: CGSize(width: 0, height: 1), radius: 3)]
+    public static let nodeCardShadow: [TPShadow] = [TPShadow(color: UIColor(red: 0.0588, green: 0.0902, blue: 0.1647, alpha: 1.0), opacity: 0.04, offset: CGSize(width: 0, height: 1), radius: 3)]
     public static let nodeCardShadowHover: [TPShadow] = [TPShadow(color: UIColor(red: 0.0588, green: 0.0902, blue: 0.1647, alpha: 1.0), opacity: 0.08, offset: CGSize(width: 0, height: 4), radius: 12), TPShadow(color: UIColor(red: 0.0588, green: 0.0902, blue: 0.1647, alpha: 1.0), opacity: 0.04, offset: CGSize(width: 0, height: 1), radius: 3)]
     public static let nodeCardTitleFg = UIColor(red: 0.0588, green: 0.0902, blue: 0.1647, alpha: 1.0)
     public static let nodeCardMetaFg = UIColor(red: 0.3922, green: 0.4549, blue: 0.5451, alpha: 1.0)
@@ -690,7 +690,7 @@ public enum TPTokens {
     public static let inputBorderHover = UIColor(red: 0.7961, green: 0.8353, blue: 0.8824, alpha: 1.0)
     public static let inputBorderFocus = UIColor(red: 0.0863, green: 0.4667, blue: 1.0, alpha: 1.0)
     public static let inputFg = UIColor(red: 0.0588, green: 0.0902, blue: 0.1647, alpha: 1.0)
-    public static let inputPlaceholder = UIColor(red: 0.5804, green: 0.6392, blue: 0.7216, alpha: 1.0)
+    public static let inputPlaceholder = UIColor(red: 0.3922, green: 0.4549, blue: 0.5451, alpha: 1.0)
 
     // MARK: - search-bar
     public static let searchBarHeight: CGFloat = 44

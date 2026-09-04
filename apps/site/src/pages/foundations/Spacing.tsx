@@ -38,7 +38,8 @@ const SPACES = tokensByPrefix('space')
 
 function SpacingRuler() {
   return (
-    <div className="my-6 overflow-hidden rounded-lg border border-border-default bg-bg-surface shadow-level-1">
+    <div className="my-6 overflow-x-auto rounded-lg border border-border-default bg-bg-surface" tabIndex={0} role="region" aria-label="间距标尺，可横向滚动">
+      <div className="min-w-[320px]">
       <div className="grid grid-cols-[6.5rem_3rem_1fr] items-center gap-3 border-b border-border-default bg-bg-canvas px-4 py-2.5 text-xs text-fg-muted sm:grid-cols-[7.5rem_3.5rem_5rem_9rem_1fr]">
         <span>Token</span>
         <span>px</span>
@@ -62,6 +63,7 @@ function SpacingRuler() {
           </li>
         ))}
       </ul>
+      </div>
     </div>
   );
 }
@@ -186,10 +188,10 @@ const BP_TONES = ['bg-blue-500/10', 'bg-blue-500/15', 'bg-blue-500/20', 'bg-blue
 const BP_NOTE: Record<string, string> = {
   xs: '最小支持宽度，无横向滚动',
   sm: '',
-  md: '平板；站点两栏起点',
-  lg: '桌面；12 列栅格',
-  xl: '站点三栏起点（侧栏 260 / 内容 / TOC 220）',
-  '2xl': '',
+  md: '平板；单栏内容与抽屉导航',
+  lg: '桌面；侧栏 216px + 内容',
+  xl: '三栏：侧栏 216px / 内容 / 目录 208px',
+  '2xl': '宽桌面；文章最大宽度 832px',
 };
 const CONTAINER_NOTE: Record<string, string> = { narrow: '长文、表单', content: '默认内容宽', wide: '站点三栏 / 宽表' };
 

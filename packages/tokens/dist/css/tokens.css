@@ -134,7 +134,7 @@
   --tp-color-fg-primary: #0F172A;
   --tp-color-fg-secondary: #475569;
   --tp-color-fg-muted: #64748B;
-  --tp-color-fg-placeholder: #94A3B8;
+  --tp-color-fg-placeholder: #64748B;
   --tp-color-fg-disabled: #94A3B8;
   --tp-color-fg-brand: #046BEF;
   --tp-color-fg-brand-strong: #0158C9;
@@ -425,12 +425,12 @@
 
   /* elevation */
   --tp-elevation-level-0: none;
-  --tp-elevation-level-1: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+  --tp-elevation-level-1: 0 1px 3px rgba(15, 23, 42, 0.04);
   --tp-elevation-level-2: 0 4px 12px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04);
   --tp-elevation-level-3: 0 12px 32px rgba(15, 23, 42, 0.12), 0 2px 6px rgba(15, 23, 42, 0.06);
   --tp-elevation-level-4: 0 24px 64px rgba(15, 23, 42, 0.18), 0 4px 12px rgba(15, 23, 42, 0.08);
-  --tp-elevation-brand-glow: 0 12px 32px rgba(22, 119, 255, 0.35);
-  --tp-elevation-brand-glow-lg: 0 20px 60px rgba(22, 119, 255, 0.45);
+  --tp-elevation-brand-glow: 0 8px 24px rgba(22, 119, 255, 0.18);
+  --tp-elevation-brand-glow-lg: 0 16px 48px rgba(22, 119, 255, 0.24);
   --tp-elevation-success-glow: 0 12px 32px rgba(34, 197, 94, 0.3);
   --tp-elevation-focus: 0 0 0 3px rgba(22, 119, 255, 0.32);
   --tp-elevation-inset-hairline: inset 0 0 0 1px rgba(15, 23, 42, 0.08);
@@ -517,8 +517,8 @@
   --tp-typography-label-sm-font-weight: 500;
   --tp-typography-label-sm-letter-spacing: 0em;
   --tp-typography-caption-font-family: 'Inter Variable', Inter, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
-  --tp-typography-caption-font-size: 12px;
-  --tp-typography-caption-line-height: 18px;
+  --tp-typography-caption-font-size: 13px;
+  --tp-typography-caption-line-height: 20px;
   --tp-typography-caption-font-weight: 400;
   --tp-typography-caption-letter-spacing: 0em;
   --tp-typography-overline-font-family: 'Inter Variable', Inter, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
@@ -586,7 +586,7 @@
   --tp-connection-button-connected-fg: #FFFFFF;
   --tp-connection-button-connected-ring: rgba(22, 119, 255, 0.16);
   --tp-connection-button-connected-gradient: radial-gradient(120% 120% at 30% 20%, #3D8BFF 0%, #1677FF 60%, #0158C9 100%);
-  --tp-connection-button-connected-shadow: 0 20px 60px rgba(22, 119, 255, 0.45);
+  --tp-connection-button-connected-shadow: 0 16px 48px rgba(22, 119, 255, 0.24);
   --tp-connection-button-duration: 1200ms;
 
   /* node-card */
@@ -595,7 +595,7 @@
   --tp-node-card-gap: 12px;
   --tp-node-card-bg: #FFFFFF;
   --tp-node-card-border: #E2E8F0;
-  --tp-node-card-shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+  --tp-node-card-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
   --tp-node-card-shadow-hover: 0 4px 12px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04);
   --tp-node-card-title-fg: #0F172A;
   --tp-node-card-meta-fg: #64748B;
@@ -633,7 +633,7 @@
   --tp-input-border-hover: #CBD5E1;
   --tp-input-border-focus: #1677FF;
   --tp-input-fg: #0F172A;
-  --tp-input-placeholder: #94A3B8;
+  --tp-input-placeholder: #64748B;
 
   /* search-bar */
   --tp-search-bar-height: 44px;

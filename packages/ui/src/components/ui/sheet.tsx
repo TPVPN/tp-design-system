@@ -77,7 +77,7 @@ function SheetContent({
           <SheetPrimitive.Close
             data-slot="sheet-close"
             className={cn(
-              'absolute top-4 right-4 flex size-8 items-center justify-center rounded-full text-fg-muted',
+              'absolute top-2 right-2 flex size-11 items-center justify-center rounded-full text-fg-muted',
               'transition-[background-color,color] duration-(--duration-fast) hover:bg-bg-surface-sunken hover:text-fg-primary',
               'outline-none focus-visible:shadow-focus disabled:pointer-events-none',
             )}

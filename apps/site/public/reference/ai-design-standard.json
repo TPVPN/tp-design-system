@@ -1,0 +1,17 @@
+{
+  "brand": "TP VPN",
+  "revision": "2026-09-04-mobile-social",
+  "mode": "light-only",
+  "immutable": { "primary": "#1677FF", "logo": "/brand/logo/svg/tp-vpn-logo-horizontal.svg", "logoRule": "Use official SVG unchanged; never ask a generator to draw the logo." },
+  "palette": { "canvas": "#FAFBFF", "surface": "#FFFFFF", "text": "#0F172A", "secondaryText": "#475569", "primary": "#1677FF", "smallTextLink": "#0759C8", "ratio": "75% white or near-white, 15–20% primary blue, remaining cool neutrals" },
+  "typography": { "socialEnglish": "Inter", "socialChinese": ["PingFang SC", "Noto Sans SC"], "iOS": "System SF and system CJK fallback; Dynamic Type", "android": "System Roboto and system CJK fallback; sp", "headline": "1–2 lines; Chinese 8–16 characters or English 3–7 words; one primary language per asset" },
+  "composition": { "subjects": 1, "landscapeArtZone": "right 50%", "landscapeTextZone": "left 45%", "generatedSafeMargin": "8%", "layoutSafeMargin": "6% minimum", "storyTopBottomSafeZone": "12% internal recommendation; verify target platform preview", "ctaMaximum": 1 },
+  "materials": ["matte white ceramic", "frosted glass", "soft daylight", "subtle contact shadows"],
+  "avoid": ["dark backgrounds", "neon", "purple-pink gradients", "chrome", "busy decorative particles", "AI-generated text or logo", "fake product UI", "unverified speed or coverage claims", "absolute security or anonymity claims", "free or guest mode"],
+  "workflow": ["read this file", "choose one theme", "generate text-free art with recorded prompt", "overlay official SVG and editable type", "recompose for each ratio", "review mobile readability and factual claims", "export source and finished asset"],
+  "internalFormats": { "landscape": [1200, 800], "square": [1080, 1080], "portrait": [1080, 1350], "story": [1080, 1920] },
+  "mobile": { "iOSTargetPt": 44, "androidTargetDp": 48, "contentMargin": "16 compact; 20–24 standard", "icons": "Lucide for Web sketches; SF Symbols on iOS and Material Symbols on Android with matching meaning", "states": ["disconnected", "connecting", "connected", "error"], "motion": "120ms press, 180ms content transition, native sheet; no perpetual decorative loops", "reducedMotion": "remove rotation, scale and translation; preserve state text and actions" },
+  "assets": { "themes": ["connection", "global", "protection", "flow"], "images": "/reference/social/{theme}.png", "editableLandscapeTemplates": "/reference/social/{theme}.svg", "prompts": "/reference/social/prompts.json", "guide": "/reference/AI-DESIGN-GUIDE.md" },
+  "acceptance": ["official logo unchanged", "primary blue unchanged", "light background", "one focal subject", "no accidental text", "no headline overflow", "text contrast at least 4.5:1", "correct target ratio and safe area", "no unsupported claims", "source art and prompt retained"],
+  "scope": "Design references and Web interaction demos; not proof of native build, VPN connection or security capabilities."
+}

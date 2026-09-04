@@ -678,10 +678,10 @@
     "original": "{color.slate.500}"
   },
   "color.fg.placeholder": {
-    "value": "#94A3B8",
+    "value": "#64748B",
     "type": "color",
-    "description": "Placeholders & disabled only — not AA",
-    "original": "{color.slate.400}"
+    "description": "Readable input hints on light surfaces; disabled text uses fg.disabled",
+    "original": "{color.slate.500}"
   },
   "color.fg.disabled": {
     "value": "#94A3B8",
@@ -2156,13 +2156,6 @@
   "elevation.level-1": {
     "value": [
       {
-        "color": "rgba(15, 23, 42, 0.06)",
-        "offsetX": "0px",
-        "offsetY": "1px",
-        "blur": "2px",
-        "spread": "0px"
-      },
-      {
         "color": "rgba(15, 23, 42, 0.04)",
         "offsetX": "0px",
         "offsetY": "1px",
@@ -2173,13 +2166,6 @@
     "type": "shadow",
     "description": "Resting cards",
     "original": [
-      {
-        "color": "rgba(15, 23, 42, 0.06)",
-        "offsetX": "0px",
-        "offsetY": "1px",
-        "blur": "2px",
-        "spread": "0px"
-      },
       {
         "color": "rgba(15, 23, 42, 0.04)",
         "offsetX": "0px",
@@ -2300,10 +2286,10 @@
   "elevation.brand-glow": {
     "value": [
       {
-        "color": "rgba(22, 119, 255, 0.35)",
+        "color": "rgba(22, 119, 255, 0.18)",
         "offsetX": "0px",
-        "offsetY": "12px",
-        "blur": "32px",
+        "offsetY": "8px",
+        "blur": "24px",
         "spread": "0px"
       }
     ],
@@ -2311,10 +2297,10 @@
     "description": "Primary CTA hover, connected button",
     "original": [
       {
-        "color": "rgba(22, 119, 255, 0.35)",
+        "color": "rgba(22, 119, 255, 0.18)",
         "offsetX": "0px",
-        "offsetY": "12px",
-        "blur": "32px",
+        "offsetY": "8px",
+        "blur": "24px",
         "spread": "0px"
       }
     ]
@@ -2322,10 +2308,10 @@
   "elevation.brand-glow-lg": {
     "value": [
       {
-        "color": "rgba(22, 119, 255, 0.45)",
+        "color": "rgba(22, 119, 255, 0.24)",
         "offsetX": "0px",
-        "offsetY": "20px",
-        "blur": "60px",
+        "offsetY": "16px",
+        "blur": "48px",
         "spread": "0px"
       }
     ],
@@ -2333,10 +2319,10 @@
     "description": "Connected connection button",
     "original": [
       {
-        "color": "rgba(22, 119, 255, 0.45)",
+        "color": "rgba(22, 119, 255, 0.24)",
         "offsetX": "0px",
-        "offsetY": "20px",
-        "blur": "60px",
+        "offsetY": "16px",
+        "blur": "48px",
         "spread": "0px"
       }
     ]
@@ -2920,8 +2906,8 @@
         "Noto Sans SC",
         "sans-serif"
       ],
-      "fontSize": "12px",
-      "lineHeight": "18px",
+      "fontSize": "13px",
+      "lineHeight": "20px",
       "fontWeight": 400,
       "letterSpacing": "0em"
     },
@@ -2929,8 +2915,8 @@
     "description": "辅助说明",
     "original": {
       "fontFamily": "{font.family.sans}",
-      "fontSize": "{font.size.12}",
-      "lineHeight": "{font.line-height.18}",
+      "fontSize": "{font.size.13}",
+      "lineHeight": "{font.line-height.20}",
       "fontWeight": "{font.weight.regular}",
       "letterSpacing": "{font.letter-spacing.normal}"
     }
@@ -3255,10 +3241,10 @@
   "connection-button.connected-shadow": {
     "value": [
       {
-        "color": "rgba(22, 119, 255, 0.45)",
+        "color": "rgba(22, 119, 255, 0.24)",
         "offsetX": "0px",
-        "offsetY": "20px",
-        "blur": "60px",
+        "offsetY": "16px",
+        "blur": "48px",
         "spread": "0px"
       }
     ],
@@ -3297,13 +3283,6 @@
   },
   "node-card.shadow": {
     "value": [
-      {
-        "color": "rgba(15, 23, 42, 0.06)",
-        "offsetX": "0px",
-        "offsetY": "1px",
-        "blur": "2px",
-        "spread": "0px"
-      },
       {
         "color": "rgba(15, 23, 42, 0.04)",
         "offsetX": "0px",
@@ -3476,7 +3455,7 @@
     "original": "{color.fg.primary}"
   },
   "input.placeholder": {
-    "value": "#94A3B8",
+    "value": "#64748B",
     "type": "color",
     "original": "{color.fg.placeholder}"
   },

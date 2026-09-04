@@ -53,12 +53,12 @@ const SCENES: { tone: SceneTone; lucide: string; react: string; color: string; n
 
 const COMMON: { icon: LucideIcon; react: string; lucide: string; use: string }[] = [
   { icon: Power, react: 'Power', lucide: 'power', use: '连接 / 电源' },
-  { icon: Globe, react: 'Globe', lucide: 'globe', use: '节点 Tab、自动线路' },
+  { icon: Globe, react: 'Globe', lucide: 'globe', use: '全球覆盖、自动线路' },
   { icon: Shield, react: 'Shield', lucide: 'shield', use: '保护、隐私' },
   { icon: ShieldCheck, react: 'ShieldCheck', lucide: 'shield-check', use: '自动最优、已保护' },
   { icon: Zap, react: 'Zap', lucide: 'zap', use: '速度、IEPL 优选' },
   { icon: Wifi, react: 'Wifi', lucide: 'wifi', use: '网络状态' },
-  { icon: Server, react: 'Server', lucide: 'server', use: '服务器、节点' },
+  { icon: Server, react: 'Server', lucide: 'server', use: '节点 Tab、服务器列表' },
   { icon: MapPin, react: 'MapPin', lucide: 'map-pin', use: '固定出口 IP、位置' },
   { icon: Search, react: 'Search', lucide: 'search', use: '搜索' },
   { icon: Settings, react: 'Settings', lucide: 'settings', use: '设置' },
@@ -233,7 +233,7 @@ export default function IconographyPage() {
       <Section id="lucide" title="Lucide 用法" en="Lucide" description="不混用其他图标库；找不到的图标先用 Lucide 近似，再提设计需求。">
         <Preview background="surface" label="24px 网格规范" className="gap-12">
           <GridSpecimen />
-          <div className="max-w-xs text-sm leading-6 text-fg-secondary">
+          <div className="min-w-0 w-full max-w-xs text-sm leading-6 text-fg-secondary">
             <DocTable
               className="my-0 shadow-none"
               caption="Lucide 属性"

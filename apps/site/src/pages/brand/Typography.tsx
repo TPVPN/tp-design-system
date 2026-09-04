@@ -248,7 +248,7 @@ export default function TypographyPage() {
         eyebrow="品牌 · Brand"
         title="字体"
         en="Typography"
-        description="主字体 Inter（变量字体，SIL OFL）；Apple 平台可用 SF Pro 等价替代。中文回退 PingFang，印地语用 Noto Sans Devanagari。数字一律 tabular-nums，标题最多 800，中文标题最多 600。"
+        description="英文清晰，中文舒展，数字稳定。以 Inter 与本地中文系统字体组成轻量的多语言体系；用字号、留白和字重建立秩序，而不是堆叠字体。"
         actions={
           <>
             <ButtonLink to="/foundations/typography" variant="outline" size="md">
@@ -261,10 +261,12 @@ export default function TypographyPage() {
       {/* ------------------------------------------------------------ */}
       <Section id="inter" title="Inter" en="Primary Typeface" description="开启 cv11（单层 a）与 ss01（开口数字），拉丁标题用负字距，正文字距 0。">
         <div className="overflow-hidden rounded-xl border border-border-default bg-bg-surface shadow-level-1">
-          <div className="grid gap-6 p-8 md:grid-cols-[auto_1fr] md:items-end">
-            <p className="font-sans text-[9rem] leading-none font-extrabold tracking-[-0.04em] text-fg-primary md:text-[11rem]" aria-label="Inter 字样 Aa">
-              Aa
-            </p>
+          <div className="grid gap-8 bg-blue-50/40 p-5 @min-[640px]:grid-cols-[1fr_1fr] @min-[640px]:items-end @min-[640px]:p-8">
+            <div>
+              <p lang="en" className="font-sans text-[clamp(80px,18cqi,144px)] leading-none font-medium tracking-[-0.06em] text-fg-primary" aria-label="Inter 字样 Aa">Aa</p>
+              <p className="mt-6 text-[28px] leading-snug font-medium text-fg-primary">清晰，自然。</p>
+              <p lang="en" className="mt-2 text-[15px] text-fg-secondary">Connection without distraction.</p>
+            </div>
             <div className="text-fg-secondary">
               <p className="text-title-md text-fg-primary">Inter Variable</p>
               <p className="mt-1 text-sm leading-6">
@@ -273,16 +275,16 @@ export default function TypographyPage() {
               <p className="mt-3 font-mono text-[11px] text-fg-muted">font-feature-settings: 'cv11', 'ss01'</p>
             </div>
           </div>
-          <div className="grid divide-y divide-border-subtle border-t border-border-subtle sm:grid-cols-5 sm:divide-x sm:divide-y-0">
+          <div className="grid grid-cols-2 border-t border-border-subtle @min-[720px]:grid-cols-5">
             {WEIGHTS.map((w) => (
-              <div key={w.weight} className="px-5 py-4">
-                <p className="text-[2.5rem] leading-none text-fg-primary" style={{ fontWeight: w.weight }}>
-                  Aa 连接
+              <div key={w.weight} className="min-w-0 border-b border-border-subtle px-4 py-5">
+                <p lang="en" className="text-[2rem] leading-none text-fg-primary" style={{ fontWeight: w.weight }}>
+                  Aa
                 </p>
                 <p className="mt-3 text-sm font-medium text-fg-primary">
                   {w.name} <span className="font-mono text-xs text-fg-muted tnum">{token(w.tokenName)}</span>
                 </p>
-                <p className="font-mono text-[11px] text-fg-muted">{w.tokenName}</p>
+                <p className="mt-2 text-[13px] text-fg-muted">{w.weight <= 600 ? '中英文 UI' : '拉丁展示字'}</p>
               </div>
             ))}
           </div>
@@ -294,7 +296,7 @@ export default function TypographyPage() {
         <Grid cols={2} gap="md">
           {SPECIMENS.map((s) => (
             <div key={s.locale} className="rounded-lg border border-border-default bg-bg-surface p-5 shadow-level-1" lang={s.lang}>
-              <p className="flex items-center justify-between gap-2">
+              <p className="flex flex-wrap items-center justify-between gap-2">
                 <span className="text-xs font-medium text-fg-muted">
                   {s.name} <span className="font-mono">· {s.locale}</span>
                 </span>
@@ -320,7 +322,7 @@ export default function TypographyPage() {
             </label>
           }
         >
-          <div className="flex flex-col gap-4 sm:flex-row">
+          <div className="flex flex-col gap-4 @min-[640px]:flex-row">
             <NumberColumn tabular={false} elapsed={elapsed} />
             <NumberColumn tabular elapsed={elapsed} />
           </div>
@@ -333,7 +335,7 @@ export default function TypographyPage() {
       </Section>
 
       {/* ------------------------------------------------------------ */}
-      <Section id="scale" title="字阶" en="Type Scale" description="22 个角色，每个都是一组固定的字号 / 行高 / 字重 / 字距。一屏最多三个层级：一个标题角色、一个正文角色、一个标签角色。">
+      <Section id="scale" title="字阶" en="Type Scale" description="22 个可复用角色，单个界面优先使用三个层级。表中为拉丁基础度量；中文标题实际使用 600 字重、零字距与 1.3 行高，正文使用 1.6 行高。">
         <div className="rounded-xl border border-border-default bg-bg-surface px-6 shadow-level-1">
           {GROUPS.map((g) => (
             <div key={g.en} className="border-b border-border-subtle last:border-b-0">

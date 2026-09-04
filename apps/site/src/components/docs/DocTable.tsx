@@ -10,7 +10,9 @@ export function DocTable({
   ...props
 }: { head: ReactNode; caption?: ReactNode } & HTMLAttributes<HTMLTableElement>) {
   return (
-    <div className={cn('my-6 overflow-x-auto rounded-lg border border-border-default bg-bg-surface shadow-level-1', className)}>
+    <div className="my-6 min-w-0">
+      <p className="mb-2 text-[13px] text-fg-muted @min-[576px]:hidden">左右滑动查看完整表格</p>
+      <div tabIndex={0} role="region" aria-label={typeof caption === 'string' ? caption : '可横向滚动的参考表格'} className={cn('overflow-x-auto rounded-lg border border-border-default bg-bg-surface', className)}>
       <table className="w-full min-w-[36rem] border-collapse text-left text-sm" {...props}>
         {caption && <caption className="sr-only">{caption}</caption>}
         <thead className="bg-bg-canvas text-xs text-fg-muted">
@@ -20,6 +22,7 @@ export function DocTable({
           {children}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }

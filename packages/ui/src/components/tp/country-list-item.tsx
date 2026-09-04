@@ -48,7 +48,7 @@ function CountryListItem({
   ...props
 }: CountryListItemProps) {
   const classes = cn(
-    'relative flex min-h-[72px] w-full items-center gap-3 px-4 text-left text-fg-primary',
+    'relative flex min-h-[72px] w-full items-center gap-3 px-4 py-3 text-left text-fg-primary',
     'transition-colors duration-(--duration-fast) ease-standard',
     onClick &&
       'cursor-pointer outline-none hover:bg-bg-surface-hover focus-visible:z-10 focus-visible:[box-shadow:inset_var(--shadow-focus)] active:bg-bg-surface-pressed',
@@ -61,15 +61,15 @@ function CountryListItem({
     <>
       <Flag code={flagCode} name={name} size={40} />
       <span data-slot="country-list-item-body" className="flex min-w-0 flex-1 flex-col gap-0.5">
-        <span className="flex min-w-0 items-center gap-2">
-          <span data-slot="country-list-item-name" className="truncate text-headline">
+        <span className="flex min-w-0 flex-wrap items-center gap-2">
+          <span data-slot="country-list-item-name" className="break-words text-headline">
             {name}
           </span>
           {tag}
         </span>
         <span
           data-slot="country-list-item-meta"
-          className="flex min-w-0 items-center gap-1.5 text-caption text-fg-secondary"
+          className="flex min-w-0 flex-wrap items-center gap-x-1.5 gap-y-0.5 text-caption text-fg-secondary"
         >
           <span className="shrink-0">
             延迟 <LatencyText ms={latencyMs} />

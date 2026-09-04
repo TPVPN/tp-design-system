@@ -11,6 +11,8 @@ const COLUMNS: { title: string; links: { label: string; to?: string; href?: stri
       { label: '品牌色彩', to: '/brand/color' },
       { label: '字体', to: '/brand/typography' },
       { label: '语调与文案', to: '/brand/voice' },
+      { label: '社媒与主视觉', to: '/brand/social' },
+      { label: 'AI 设计标准', to: '/brand/ai-guidelines' },
     ],
   },
   {
@@ -19,6 +21,7 @@ const COLUMNS: { title: string; links: { label: string; to?: string; href?: stri
       { label: '组件总览', to: '/components' },
       { label: '平台接入', to: '/platforms' },
       { label: '下载中心', to: '/downloads' },
+      { label: '网站地图', to: '/sitemap' },
       { label: '更新日志', to: '/changelog' },
       { label: 'GitHub', href: SITE.github },
     ],

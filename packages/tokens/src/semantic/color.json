@@ -21,7 +21,7 @@
       "primary": { "$value": "{color.slate.900}", "$description": "Headings and body. 17.9:1 on white" },
       "secondary": { "$value": "{color.slate.600}", "$description": "Supporting text. 7.6:1" },
       "muted": { "$value": "{color.slate.500}", "$description": "Captions, metadata. 4.76:1 (AA floor)" },
-      "placeholder": { "$value": "{color.slate.400}", "$description": "Placeholders & disabled only — not AA" },
+      "placeholder": { "$value": "{color.slate.500}", "$description": "Readable input hints on light surfaces; disabled text uses fg.disabled" },
       "disabled": { "$value": "{color.slate.400}" },
       "brand": { "$value": "{color.blue.600}", "$description": "Brand text, links. 4.82:1" },
       "brand-strong": { "$value": "{color.blue.700}" },

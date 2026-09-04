@@ -259,6 +259,9 @@ export default function DownloadsPage() {
         }
       />
 
+      <Section id="new-references" title="移动端与社媒参考" description="本次新增素材独立下载；下方品牌 ZIP 保持原有内容。">
+        <div className="flex flex-wrap gap-4"><ButtonLink to="/brand/social" variant="outline">4 套 Main KV</ButtonLink><ButtonLink to="/brand/ai-guidelines" variant="outline">AI 设计标准</ButtonLink><ButtonLink to="/platforms/ios" variant="outline">iOS 组件</ButtonLink><ButtonLink to="/platforms/android" variant="outline">Android 组件</ButtonLink></div>
+      </Section>
       <Section id="overview" title="总览" en="Overview">
         <Grid cols={4} gap="sm">
           <StatCard label="资产文件" value={ASSET_FILES.length} hint={`合计 ${formatBytes(ASSET_BYTES)}`} icon={<FileArchive aria-hidden />} />
@@ -314,7 +317,7 @@ export default function DownloadsPage() {
         </p>
       </Section>
 
-      <Section id="social" title="社交图" en="Social images" description="四张成品图直接可用；尺寸已按各平台要求裁定，不要再缩放或加字。">
+      <Section id="social" title="基础社交资产" en="Social assets" description="头像、分享卡片与封面。新的 Light Mode 主视觉见上方 Main KV 素材库。">
         <Grid cols={2} className="my-6">
           {SOCIAL_ITEMS.map((item) => (
             <DownloadCard

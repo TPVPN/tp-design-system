@@ -16,7 +16,6 @@ export function SidebarNav({ onNavigate, className }: SidebarNavProps) {
         <div key={section.id}>
           <p className="eyebrow mb-2 px-3 text-fg-secondary">
             {section.title}
-            <span className="ml-1.5 font-medium normal-case tracking-normal text-fg-secondary">{section.en}</span>
           </p>
           <ul className="flex flex-col gap-px">
             {section.items.map((item) => (
@@ -29,26 +28,14 @@ export function SidebarNav({ onNavigate, className }: SidebarNavProps) {
                   onFocus={() => preloadPage(item.path)}
                   className={({ isActive }) =>
                     cn(
-                      'group flex items-center justify-between gap-3 rounded-sm px-3 py-1.5 text-sm transition-colors duration-200',
+                      'group flex min-h-11 items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors duration-200',
                       isActive
                         ? 'bg-blue-50 font-medium text-blue-700'
                         : 'text-fg-secondary hover:bg-bg-surface-hover hover:text-fg-primary',
                     )
                   }
                 >
-                  {({ isActive }) => (
-                    <>
-                      <span className="truncate">{item.title}</span>
-                      <span
-                        className={cn(
-                          'shrink-0 truncate text-[11px] tracking-wide',
-                          isActive ? 'text-blue-700' : 'text-fg-secondary',
-                        )}
-                      >
-                        {item.en}
-                      </span>
-                    </>
-                  )}
+                  <span>{item.title}</span>
                 </NavLink>
               </li>
             ))}
@@ -62,7 +49,7 @@ export function SidebarNav({ onNavigate, className }: SidebarNavProps) {
 /** Sticky 260px desktop sidebar (≥ md). */
 export function Sidebar() {
   return (
-    <aside className="sticky top-16 hidden h-[calc(100dvh-4rem)] w-[260px] shrink-0 overflow-y-auto overscroll-contain border-r border-border-subtle py-8 pr-5 md:block">
+    <aside className="sticky top-16 hidden h-[calc(100dvh-4rem)] w-[216px] shrink-0 overflow-y-auto overscroll-contain border-r border-border-subtle py-8 pr-5 lg:block">
       <SidebarNav />
     </aside>
   );

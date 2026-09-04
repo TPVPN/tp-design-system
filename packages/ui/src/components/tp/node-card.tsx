@@ -48,10 +48,9 @@ function NodeCard({
 }: NodeCardProps) {
   const load = Math.round(Math.min(100, Math.max(0, loadPct)));
   const classes = cn(
-    'group/node-card flex w-full items-center gap-3 rounded-lg border border-border-default bg-bg-surface p-4 text-left text-fg-primary shadow-level-1',
+    'group/node-card flex w-full items-center gap-3 rounded-lg border border-border-default bg-bg-surface p-4 text-left text-fg-primary',
     'transition-[box-shadow,border-color,background-color,transform] duration-(--duration-base) ease-standard',
-    'hover:border-border-strong hover:shadow-level-2',
-    onSelect && 'cursor-pointer outline-none focus-visible:shadow-focus active:scale-[0.995]',
+    (onSelect || onClick) && 'cursor-pointer hover:border-blue-300 hover:bg-blue-50/40 focus-visible:shadow-focus active:bg-blue-50',
     selected && 'border-blue-500 bg-blue-50 hover:border-blue-500',
     className,
   );
@@ -72,13 +71,13 @@ function NodeCard({
         )}
       </span>
       <span data-slot="node-card-body" className="flex min-w-0 flex-1 flex-col gap-0.5">
-        <span className="flex min-w-0 items-center gap-2">
-          <span data-slot="node-card-title" className="truncate text-headline">
+        <span className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1">
+          <span data-slot="node-card-title" className="break-words text-headline">
             {title}
           </span>
           {badge}
         </span>
-        <span data-slot="node-card-meta" className="flex min-w-0 items-center gap-1.5 text-caption text-fg-secondary">
+        <span data-slot="node-card-meta" className="flex min-w-0 flex-wrap items-center gap-x-1.5 gap-y-0.5 text-caption text-fg-secondary">
           {subtitle ? (
             <>
               <span className="truncate">{subtitle}</span>
@@ -93,11 +92,11 @@ function NodeCard({
         </span>
       </span>
       <SignalBars latencyMs={latencyMs} />
-      <ChevronRight className="size-5 shrink-0 text-fg-placeholder" aria-hidden="true" />
+      {(onSelect || onClick) && <ChevronRight className="size-4 shrink-0 text-fg-muted" aria-hidden="true" />}
     </>
   );
 
-  if (onSelect) {
+  if (onSelect || onClick) {
     return (
       <button
         type="button"
@@ -107,7 +106,7 @@ function NodeCard({
         className={classes}
         onClick={(event) => {
           onClick?.(event);
-          onSelect();
+          onSelect?.();
         }}
         {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
       >

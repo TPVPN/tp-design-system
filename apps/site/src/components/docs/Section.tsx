@@ -23,11 +23,11 @@ export function AnchorHeading({ id, as: Tag, title, en, className }: AnchorHeadi
       )}
     >
       <span>{title}</span>
-      {en && <span className={cn('font-medium text-fg-muted', Tag === 'h2' ? 'text-title-sm' : 'text-headline')}>{en}</span>}
+      {en && en !== title && <span lang="en" className="text-[14px] leading-6 font-normal text-fg-muted">{en}</span>}
       <a
         href={`#${id}`}
-        aria-label="复制本节链接"
-        className="ml-1 inline-flex size-6 items-center justify-center self-center rounded-xs text-fg-placeholder opacity-0 transition-opacity duration-200 group-hover:opacity-100 hover:bg-bg-surface-sunken hover:text-fg-secondary focus-visible:opacity-100"
+        aria-label={`跳转到${typeof title === 'string' ? title : '本节'}`}
+        className="ml-auto inline-flex size-11 items-center justify-center self-center rounded-md text-fg-muted opacity-40 transition-opacity duration-200 group-hover:opacity-100 hover:bg-bg-surface-sunken hover:text-fg-secondary focus-visible:opacity-100"
       >
         <LinkIcon className="size-3.5" aria-hidden />
       </a>

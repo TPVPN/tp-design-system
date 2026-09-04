@@ -11,8 +11,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden" aria-labelledby="hero-title">
       <div className="hero-glow absolute inset-0 -z-10" aria-hidden />
-      <div className="hero-grid absolute inset-0 -z-10" aria-hidden />
-      <div className="mx-auto grid max-w-[1200px] items-center gap-14 px-6 pt-16 pb-20 lg:grid-cols-[1.15fr_0.85fr] lg:pt-24 lg:pb-28">
+      <div className="mx-auto grid max-w-[1280px] items-center gap-12 px-4 pt-12 pb-16 sm:px-8 sm:pt-20 lg:grid-cols-[1.15fr_0.85fr] lg:pt-24 lg:pb-24">
         <motion.div variants={container} initial="hidden" animate="show">
           <motion.div variants={item} className="flex items-center gap-3">
             <Pill tone="brand">v{SITE.version}</Pill>
@@ -23,17 +22,17 @@ export function Hero() {
           <motion.h1
             variants={item}
             id="hero-title"
-            className="mt-6 text-display-md text-fg-primary sm:text-display-lg lg:text-display-xl xl:text-display-2xl"
+            className="mt-7 text-[clamp(36px,5.2vw,68px)] leading-[1.2] font-semibold text-fg-primary"
           >
-            为可信连接
-            <br className="hidden lg:block" />
-            而设计。
+            连接世界，
+            <br />
+            从清晰开始。
           </motion.h1>
-          <motion.p variants={item} className="mt-4 text-title-md font-medium text-fg-muted sm:text-title-lg">
-            The TP VPN Design System
+          <motion.p variants={item} lang="en" className="mt-5 text-[18px] leading-7 text-fg-muted sm:text-[22px]">
+            Clarity in every connection.
           </motion.p>
           <motion.p variants={item} className="mt-6 max-w-[46ch] text-body-lg text-fg-secondary">
-            一套跨 iOS、Android、Web 与 Figma 的品牌、Token、组件与资产体系——用同一种语言，构建每一次连接。
+            TP VPN 的统一设计语言。从品牌到每一次连接，让状态一眼可见，让操作自然发生。
           </motion.p>
           <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-3">
             <ButtonLink to="/brand/logo" size="lg">
@@ -45,8 +44,8 @@ export function Hero() {
               下载资产
             </ButtonLink>
           </motion.div>
-          <motion.p variants={item} className="mt-8 text-xs text-fg-muted">
-            Light mode only · Tailwind v4 token · React 19 组件 · Flutter / Swift / Kotlin 输出
+          <motion.p variants={item} className="mt-8 text-[13px] leading-6 text-fg-muted">
+            品牌规范 · 设计基础 · 交互组件 · 多端模式
           </motion.p>
         </motion.div>
 

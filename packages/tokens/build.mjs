@@ -1166,7 +1166,10 @@ async function verify(sd) {
     '--color-fg-primary: #0F172A;',
     '--text-body: 0.875rem;',
     '--text-body--line-height: 1.375rem;',
-    '--shadow-level-1: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);',
+    '--shadow-level-1: 0 1px 3px rgba(15, 23, 42, 0.04);',
+    '--text-caption: 0.8125rem;',
+    '--text-caption--line-height: 1.25rem;',
+    '--color-fg-placeholder: #64748B;',
     '--inset-shadow-hairline: inset 0 0 0 1px rgba(15, 23, 42, 0.08);',
     '--ease-standard: cubic-bezier(0.2, 0, 0, 1);',
     '--duration-base: 200ms;',
@@ -1181,7 +1184,7 @@ async function verify(sd) {
     '--gradient-primary: linear-gradient(135deg, #1677FF 0%, #4096FF 100%);',
     '--z-index-modal: 1100;',
     '--tp-button-primary-bg: #046BEF;',
-    '--tp-connection-button-connected-shadow: 0 20px 60px rgba(22, 119, 255, 0.45);',
+    '--tp-connection-button-connected-shadow: 0 16px 48px rgba(22, 119, 255, 0.24);',
   ]) {
     expect(theme.includes(needle), `theme.css missing "${needle}"`);
   }
@@ -1228,7 +1231,7 @@ async function verify(sd) {
     'static const double radiusMd = 12;',
     'static const FontWeight fontWeightBold = FontWeight.w700;',
     'static const TextStyle typographyBody = TextStyle(fontSize: 14, height: 1.5714, fontWeight: FontWeight.w400, letterSpacing: 0);',
-    'static const List<BoxShadow> elevationLevel1 = [BoxShadow(color: Color(0x0F0F172A), offset: Offset(0, 1), blurRadius: 2), BoxShadow(color: Color(0x0A0F172A), offset: Offset(0, 1), blurRadius: 3)];',
+    'static const List<BoxShadow> elevationLevel1 = [BoxShadow(color: Color(0x0A0F172A), offset: Offset(0, 1), blurRadius: 3)];',
     'static const Duration durationBase = Duration(milliseconds: 200);',
     'static const Cubic easingStandard = Cubic(0.2, 0.0, 0.0, 1.0);',
     'static const Color colorAlphaInk4 = Color.fromRGBO(15, 23, 42, 0.04);',

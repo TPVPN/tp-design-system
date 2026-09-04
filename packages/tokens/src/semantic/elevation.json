@@ -5,7 +5,6 @@
     "level-0": { "$value": [], "$description": "Flat" },
     "level-1": {
       "$value": [
-        { "color": "rgba(15, 23, 42, 0.06)", "offsetX": "0px", "offsetY": "1px", "blur": "2px", "spread": "0px" },
         { "color": "rgba(15, 23, 42, 0.04)", "offsetX": "0px", "offsetY": "1px", "blur": "3px", "spread": "0px" }
       ],
       "$description": "Resting cards"
@@ -32,11 +31,11 @@
       "$description": "Modals"
     },
     "brand-glow": {
-      "$value": [{ "color": "rgba(22, 119, 255, 0.35)", "offsetX": "0px", "offsetY": "12px", "blur": "32px", "spread": "0px" }],
+      "$value": [{ "color": "rgba(22, 119, 255, 0.18)", "offsetX": "0px", "offsetY": "8px", "blur": "24px", "spread": "0px" }],
       "$description": "Primary CTA hover, connected button"
     },
     "brand-glow-lg": {
-      "$value": [{ "color": "rgba(22, 119, 255, 0.45)", "offsetX": "0px", "offsetY": "20px", "blur": "60px", "spread": "0px" }],
+      "$value": [{ "color": "rgba(22, 119, 255, 0.24)", "offsetX": "0px", "offsetY": "16px", "blur": "48px", "spread": "0px" }],
       "$description": "Connected connection button"
     },
     "success-glow": {

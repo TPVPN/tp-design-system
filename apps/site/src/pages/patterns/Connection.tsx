@@ -215,7 +215,7 @@ export default function ConnectionPage() {
           </Prose>
           <Preview label="计时与流量示例" background="surface">
             <div className="flex w-full max-w-sm flex-col gap-6">
-              <div className="flex items-baseline justify-around text-numeric-md text-fg-primary tabular">
+              <div className="flex flex-wrap items-baseline justify-around gap-4 text-numeric-md text-fg-primary tabular">
                 <span>00:00:00</span>
                 <span>00:12:47</span>
                 <span>1d 02:03:04</span>
@@ -242,7 +242,7 @@ export default function ConnectionPage() {
             循环；已连接用 <code>RadialGradient</code> + <code>TpTokens.elevationBrandGlowLg</code>。
           </p>
           <p>
-            <strong>iOS（SwiftUI）</strong>：<code>Circle().fill(RadialGradient(…))</code> + <code>.shadow(color: Color(TPTokens.colorBlue500).opacity(0.45), radius: 30, y: 10)</code>
+            <strong>iOS（SwiftUI）</strong>：<code>Circle().fill(RadialGradient(…))</code> + <code>.shadow(color: Color(TPTokens.colorBlue500).opacity(0.24), radius: 24, y: 16)</code>
             ；外环用 <code>rotationEffect</code> 配 <code>.linear(duration: TPTokens.durationConnect).repeatForever()</code>；
             计时文字 <code>.monospacedDigit()</code>。
           </p>

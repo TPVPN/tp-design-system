@@ -22,7 +22,7 @@ export function MobileNav() {
         <button
           type="button"
           aria-label="打开导航"
-          className="inline-flex size-9 items-center justify-center rounded-md text-fg-secondary transition-colors hover:bg-bg-surface-hover hover:text-fg-primary md:hidden"
+          className="inline-flex size-11 items-center justify-center rounded-md text-fg-secondary transition-colors hover:bg-bg-surface-hover hover:text-fg-primary lg:hidden"
         >
           <Menu className="size-5" aria-hidden />
         </button>

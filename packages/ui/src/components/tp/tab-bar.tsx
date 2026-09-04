@@ -11,7 +11,7 @@ export interface TabBarIconProps {
 export interface TabBarItem {
   key: string;
   label: string;
-  /** Icon component (e.g. a lucide icon); stroke width is 2.5 when active, 1.75 otherwise. */
+  /** Active icon 2px; resting icon 1.75px. */
   icon: React.ComponentType<TabBarIconProps>;
 }
 
@@ -52,7 +52,7 @@ function TabBar({ items, active, onChange, className, ...props }: TabBarProps) {
                 isActive && 'text-blue-600 hover:text-blue-600',
               )}
             >
-              <Icon className="size-6" strokeWidth={isActive ? 2.5 : 1.75} aria-hidden="true" />
+              <Icon className="size-6" strokeWidth={isActive ? 2 : 1.75} aria-hidden="true" />
               <span className="truncate">{label}</span>
             </button>
           );

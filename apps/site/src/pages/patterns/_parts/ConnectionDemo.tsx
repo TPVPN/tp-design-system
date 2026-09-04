@@ -5,7 +5,6 @@ import { Alert, AlertDescription, AlertTitle, Button, Label, StatusDot, Switch, 
 import { Pill, Preview } from '@/components/docs';
 import { EASE_DECELERATE } from '@/lib/motion';
 import { HomeScreen } from './HomeScreen';
-import { PhoneStage } from './PhoneStage';
 
 /** Short zh label per state, shared with the copy table on the page. */
 export const STATE_ZH: Record<ConnectionState, string> = { disconnected: '未连接', connecting: '连接中', connected: '已连接', error: '失败' };
@@ -156,7 +155,7 @@ function EventLog({ state, log }: { state: ConnectionState; log: LogEntry[] }) {
           ))
         )}
       </ol>
-      <p className="mt-4 flex items-center gap-2 border-t border-border-subtle pt-3 text-xs text-fg-muted">
+      <p className="mt-4 flex flex-wrap items-center gap-2 border-t border-border-subtle pt-3 text-[13px] text-fg-muted">
         <StatusDot state={state} size={8} />
         当前状态：{STATE_ZH[state]}
         <Pill size="sm" tone={state === 'connected' ? 'success' : state === 'error' ? 'error' : state === 'connecting' ? 'brand' : 'neutral'}>
@@ -212,10 +211,10 @@ export function ConnectionDemo() {
         </>
       }
     >
-      <div className="grid w-full items-start gap-6 md:grid-cols-[minmax(0,320px)_1fr]">
-        <PhoneStage width={320} height={600}>
+      <div className="grid w-full grid-cols-1 items-start gap-6 @min-[720px]:grid-cols-[minmax(0,320px)_1fr]">
+        <div className="mx-auto min-w-0 w-full max-w-[320px]">
           <HomeScreen state={state} elapsed={elapsed} onToggle={toggle} overlay={toast} />
-        </PhoneStage>
+        </div>
         <EventLog state={state} log={log} />
       </div>
     </Preview>

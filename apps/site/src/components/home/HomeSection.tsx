@@ -36,8 +36,8 @@ export function HomeSection({ id, eyebrow, title, en, description, children, cla
             )}
             <motion.h2 variants={item} id={`${id}-title`} className="mt-3 text-display-sm text-fg-primary sm:text-display-md">
               {title}
-              {en && <span className="ml-3 font-medium text-fg-muted">{en}</span>}
             </motion.h2>
+            {en && <motion.p variants={item} lang="en" className="mt-3 text-body-md text-fg-muted">{en}</motion.p>}
             {description && (
               <motion.p variants={item} className="mt-4 max-w-[58ch] text-body-lg text-fg-secondary">
                 {description}

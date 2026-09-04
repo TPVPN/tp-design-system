@@ -29,7 +29,7 @@ function collectHeadings(root: HTMLElement | null): Heading[] {
 }
 
 /** Right rail (≥ xl, 220px): builds from h2/h3 in the article and tracks the active one. */
-export function Toc({ containerRef }: { containerRef: RefObject<HTMLElement | null> }) {
+export function Toc({ containerRef, compact = false }: { containerRef: RefObject<HTMLElement | null>; compact?: boolean }) {
   const { pathname } = useLocation();
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -88,8 +88,24 @@ export function Toc({ containerRef }: { containerRef: RefObject<HTMLElement | nu
     return () => io.disconnect();
   }, [headings]);
 
+  if (compact) {
+    return headings.length > 0 ? (
+      <details key={pathname} className="mb-8 rounded-lg border border-border-default bg-bg-surface xl:hidden">
+        <summary className="cursor-pointer px-4 py-3 text-sm font-medium text-fg-secondary">本页目录</summary>
+        <nav aria-label="本页目录" className="grid max-h-64 overflow-y-auto border-t border-border-subtle p-2">
+          {headings.map((h) => (
+            <a key={h.id} href={`#${h.id}`} onClick={(e) => e.currentTarget.closest('details')?.removeAttribute('open')}
+              className={cn('rounded-sm px-3 py-3 text-sm text-fg-secondary hover:bg-blue-50 hover:text-blue-700', h.level === 3 && 'pl-6')}>
+              {h.text}
+            </a>
+          ))}
+        </nav>
+      </details>
+    ) : null;
+  }
+
   return (
-    <aside className="sticky top-16 hidden h-[calc(100dvh-4rem)] w-[220px] shrink-0 overflow-y-auto overscroll-contain py-8 pl-6 xl:block">
+    <aside className="sticky top-16 hidden h-[calc(100dvh-4rem)] w-[208px] shrink-0 overflow-y-auto overscroll-contain py-14 pl-6 xl:block">
       {headings.length > 0 && (
         <nav aria-label="本页目录">
           <p className="eyebrow mb-3 text-fg-muted">本页目录</p>
@@ -119,7 +135,7 @@ export function Toc({ containerRef }: { containerRef: RefObject<HTMLElement | nu
             href="#top"
             onClick={(e) => {
               e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+              window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
             }}
             className="mt-6 inline-flex items-center gap-1 text-[12px] text-fg-muted transition-colors hover:text-fg-primary"
           >

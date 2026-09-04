@@ -1,0 +1,47 @@
+.reference-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px }
+.reference-card { border:1px solid #e2e8f0;border-radius:20px;padding:24px;background:white }
+.reference-card h3 { font-size:18px;font-weight:600;margin-bottom:10px }
+.reference-card p { font-size:15px;line-height:1.8;color:#475569 }
+.reference-download { display:inline-flex;align-items:center;min-height:44px;color:#0759c8;font-weight:500;gap:8px;text-decoration:underline;text-underline-offset:4px }
+.native-demo { padding:24px 12px;background:#f1f5fb;border:1px solid #e2e8f0;border-radius:24px }
+.native-phone { width:370px;max-width:100%;margin:auto;background:#fafbff;border:1px solid #dbe3ef;border-radius:36px;overflow:hidden;box-shadow:0 12px 32px #0f172a0a;color:#0f172a }
+.native-phone.android { border-radius:24px }
+.native-status { display:flex;justify-content:space-between;padding:16px 24px 8px;font-size:12px;font-weight:600 }
+.native-status span:last-child { display:flex;align-items:center;gap:5px }
+.native-heading { padding:20px 24px 4px }
+.native-kicker { font-size:12px;color:#0759c8;font-weight:600;letter-spacing:.12em }
+.native-heading h3 { font-size:26px;line-height:1.35;font-weight:650;margin:8px 0 }
+.native-heading p { color:#64748b;font-size:13px }
+.native-body { min-height:360px;padding:20px }
+.native-connect-area { text-align:center;padding:12px 0 28px }
+.native-power { width:120px;height:120px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#1677ff;color:white;border:8px solid #e6f0ff;cursor:pointer;margin-bottom:20px }
+.native-power span { display:flex }
+.native-power.connected { background:#e8f6ef;color:#137246;border-color:#d5eee1 }
+.native-power.error { background:#fff0ee;color:#ba3425;border-color:#ffe2dd }
+.native-state { font-size:17px;font-weight:600;margin-bottom:6px }
+.native-connect-area p:last-child { font-size:12px;color:#64748b;line-height:1.7 }
+.native-row { display:flex;align-items:center;gap:12px;min-height:60px;padding:12px;width:100%;border:1px solid #e2e8f0;border-radius:14px;background:white;text-align:left;font-size:14px }
+button.native-row { cursor:pointer }
+.native-row>span { flex:1;min-width:0;overflow-wrap:anywhere }
+.native-row strong { display:block;font-weight:500 }
+.native-row small { display:block;color:#64748b;font-size:12px;margin-top:4px }
+.native-note { display:flex;align-items:flex-start;gap:8px;color:#64748b;font-size:12px;line-height:1.7;margin-top:18px }
+.native-note svg { flex-shrink:0;margin-top:2px }
+.native-tabs { display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #e2e8f0;background:white;padding:8px }
+.native-tabs button { display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:52px;font-size:12px;color:#64748b;border-radius:12px;cursor:pointer }
+.native-tabs button[aria-current] { color:#0759c8;background:#edf4ff }
+.android .native-tabs button[aria-current] { border-radius:24px }
+.native-homebar { height:4px;width:100px;border-radius:4px;background:#0f172a;margin:8px auto 10px }
+.native-test { display:flex;align-items:center;justify-content:center;gap:12px;font-size:14px;min-height:48px;flex-wrap:wrap;margin-top:16px }
+.native-search { display:block;font-size:14px }
+.native-search input { display:block;border:1px solid #cbd5e1;background:white;border-radius:12px;padding:12px;width:100%;margin:8px 0 16px;min-height:48px }
+.native-list { display:grid;gap:12px }
+.ios .native-row { font-size:17px }
+.android .native-row { font-size:16px;min-height:64px;border-radius:16px }
+.native-row small { font-size:13px }
+.android [data-slot=switch] { width:52px;height:32px;border:2px solid #64748b;padding:2px;background:#e2e8f0 }
+.android [data-slot=switch][data-state=checked] { border-color:#1677ff;background:#1677ff }
+.android [data-slot=switch-thumb] { width:24px;height:24px;box-shadow:none }
+.android [data-slot=switch-thumb][data-state=checked] { translate:20px 0;transform:none }
+.native-reduce { animation:none!important;transition:none!important }
+@media(max-width:400px) { .native-body{padding:16px}.native-heading{padding:16px}.native-demo{padding:16px 8px}.native-heading h3{font-size:23px} }

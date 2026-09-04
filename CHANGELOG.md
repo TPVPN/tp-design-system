@@ -6,6 +6,22 @@ All notable changes to this project are documented here. The format is based on 
 
 ## [Unreleased]
 
+### Added — Mobile & Social · 2026-09-04
+
+- iOS / Android 组件参考、SwiftUI / Compose 源码与移动端交互实验室；覆盖连接、取消、重试、节点选择、搜索、设置与减少动态效果。
+- 4 套 Light Mode Image Gen 主视觉、可编辑 SVG、四种比例的重排预览及中英文标题。
+- AI 设计标准 JSON、完整生成提示词和使用说明；Logo 与主色不变。
+- 独立 Sitemap，与站点导航共用同一份索引；下载中心连接新增素材。
+
+### Changed — Visual refresh · 2026-09-04
+
+- 保留 TP Blue #1677FF 与全部官方 Logo 资产；网站导航和首页品牌展示直接复用官方横版 SVG。
+- 首页采用更轻的展示层级与简明文案，新增基于真实路由生成的 System Map；文档标题不再重复同名英文。
+- 中文标题统一 600 字重、零字距、1.3 行高，正文 1.6；辅助信息 caption 提升到 13/20，输入提示改用可读的 slate-500。
+- 平板使用单栏 + 导航抽屉，1024px 起显示侧栏，1280px 起显示右侧目录；预览和网格依据文章宽度响应，窄屏提供折叠目录。
+- 节点与国家行支持元数据换行；可点击 NodeCard 使用原生按钮；连接演示不再缩小交互目标。搜索清除、导航和弹层关闭采用 44px 触控区域。
+- 减少静态卡片和主按钮的装饰阴影，统一清晰的键盘焦点；减少动态偏好下移除 CSS 位移动效。Token 多端产物同步更新。
+
 ### Added — `@tpvpn/site`
 
 - 38 个文档路由全部落地（此前为 `ComingSoon` 占位）：品牌 5 页（Logo、App Icon、色彩、字体、语调与文案）、基础 7 页（色彩 Token、字阶 Token、间距 · 圆角 · 布局、阴影层级、动效、图标与国旗、无障碍）、组件总览 + 18 个组件页、模式 4 页（连接流程、节点列表、空态 · 错误 · 加载、套餐与付费）、平台接入、下载中心、更新日志（渲染仓库根目录 `CHANGELOG.md`）。

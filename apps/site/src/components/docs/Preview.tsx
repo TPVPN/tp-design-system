@@ -50,7 +50,7 @@ export function Preview({
   const hasBar = Boolean(toolbar || code);
 
   return (
-    <figure className="my-6 overflow-hidden rounded-xl border border-border-default bg-bg-surface shadow-level-1">
+    <figure className="my-6 min-w-0 overflow-hidden rounded-xl border border-border-default bg-bg-surface">
       {hasBar && (
         <div className="flex min-h-11 items-center justify-between gap-3 border-b border-border-subtle px-3 py-1.5">
           <div className="flex flex-wrap items-center gap-2 text-sm">{toolbar}</div>
@@ -61,7 +61,7 @@ export function Preview({
               aria-expanded={open}
               aria-controls={panelId}
               className={cn(
-                'inline-flex h-8 shrink-0 items-center gap-1.5 rounded-sm px-2.5 text-xs font-medium transition-colors duration-200',
+                'inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-sm px-2.5 text-[13px] font-medium transition-colors duration-200',
                 open ? 'bg-blue-50 text-blue-700' : 'text-fg-secondary hover:bg-bg-surface-hover hover:text-fg-primary',
               )}
             >
@@ -75,9 +75,9 @@ export function Preview({
         role="region"
         aria-label={label}
         className={cn(
-          'relative',
+          'relative min-w-0',
           BACKGROUNDS[background],
-          padded && 'p-8',
+          padded && 'p-4 @min-[480px]:p-6 @min-[720px]:p-8',
           centered && 'flex flex-wrap items-center justify-center gap-4',
           className,
         )}

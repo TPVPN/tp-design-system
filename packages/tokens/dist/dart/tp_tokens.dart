@@ -160,8 +160,8 @@ abstract final class TpTokens {
   static const Color colorFgSecondary = Color(0xFF475569);
   /// Captions, metadata. 4.76:1 (AA floor)
   static const Color colorFgMuted = Color(0xFF64748B);
-  /// Placeholders & disabled only — not AA
-  static const Color colorFgPlaceholder = Color(0xFF94A3B8);
+  /// Readable input hints on light surfaces; disabled text uses fg.disabled
+  static const Color colorFgPlaceholder = Color(0xFF64748B);
   static const Color colorFgDisabled = Color(0xFF94A3B8);
   /// Brand text, links. 4.82:1
   static const Color colorFgBrand = Color(0xFF046BEF);
@@ -505,7 +505,7 @@ abstract final class TpTokens {
   /// Flat
   static const List<BoxShadow> elevationLevel0 = [];
   /// Resting cards
-  static const List<BoxShadow> elevationLevel1 = [BoxShadow(color: Color(0x0F0F172A), offset: Offset(0, 1), blurRadius: 2), BoxShadow(color: Color(0x0A0F172A), offset: Offset(0, 1), blurRadius: 3)];
+  static const List<BoxShadow> elevationLevel1 = [BoxShadow(color: Color(0x0A0F172A), offset: Offset(0, 1), blurRadius: 3)];
   /// Node cards, dropdowns, hover lift
   static const List<BoxShadow> elevationLevel2 = [BoxShadow(color: Color(0x140F172A), offset: Offset(0, 4), blurRadius: 12), BoxShadow(color: Color(0x0A0F172A), offset: Offset(0, 1), blurRadius: 3)];
   /// Popovers, sheets
@@ -513,9 +513,9 @@ abstract final class TpTokens {
   /// Modals
   static const List<BoxShadow> elevationLevel4 = [BoxShadow(color: Color(0x2E0F172A), offset: Offset(0, 24), blurRadius: 64), BoxShadow(color: Color(0x140F172A), offset: Offset(0, 4), blurRadius: 12)];
   /// Primary CTA hover, connected button
-  static const List<BoxShadow> elevationBrandGlow = [BoxShadow(color: Color(0x591677FF), offset: Offset(0, 12), blurRadius: 32)];
+  static const List<BoxShadow> elevationBrandGlow = [BoxShadow(color: Color(0x2E1677FF), offset: Offset(0, 8), blurRadius: 24)];
   /// Connected connection button
-  static const List<BoxShadow> elevationBrandGlowLg = [BoxShadow(color: Color(0x731677FF), offset: Offset(0, 20), blurRadius: 60)];
+  static const List<BoxShadow> elevationBrandGlowLg = [BoxShadow(color: Color(0x3D1677FF), offset: Offset(0, 16), blurRadius: 48)];
   static const List<BoxShadow> elevationSuccessGlow = [BoxShadow(color: Color(0x4D22C55E), offset: Offset(0, 12), blurRadius: 32)];
   /// Keyboard focus ring
   static const List<BoxShadow> elevationFocus = [BoxShadow(color: Color(0x521677FF), offset: Offset(0, 0), blurRadius: 0, spreadRadius: 3)];
@@ -558,7 +558,7 @@ abstract final class TpTokens {
   /// 小标签 / Tab
   static const TextStyle typographyLabelSm = TextStyle(fontSize: 12, height: 1.3333, fontWeight: FontWeight.w500, letterSpacing: 0);
   /// 辅助说明
-  static const TextStyle typographyCaption = TextStyle(fontSize: 12, height: 1.5, fontWeight: FontWeight.w400, letterSpacing: 0);
+  static const TextStyle typographyCaption = TextStyle(fontSize: 13, height: 1.5385, fontWeight: FontWeight.w400, letterSpacing: 0);
   /// text-transform: uppercase (apply with toUpperCase())
   /// 分组小标（大写）
   static const TextStyle typographyOverline = TextStyle(fontSize: 11, height: 1.4545, fontWeight: FontWeight.w600, letterSpacing: 0.66);
@@ -606,7 +606,7 @@ abstract final class TpTokens {
   static const Color connectionButtonConnectedFg = Color(0xFFFFFFFF);
   static const Color connectionButtonConnectedRing = Color.fromRGBO(22, 119, 255, 0.16);
   // connection-button.connected-gradient (CSS gradient, not representable as a const): radial-gradient(120% 120% at 30% 20%, #3D8BFF 0%, #1677FF 60%, #0158C9 100%)
-  static const List<BoxShadow> connectionButtonConnectedShadow = [BoxShadow(color: Color(0x731677FF), offset: Offset(0, 20), blurRadius: 60)];
+  static const List<BoxShadow> connectionButtonConnectedShadow = [BoxShadow(color: Color(0x3D1677FF), offset: Offset(0, 16), blurRadius: 48)];
   static const Duration connectionButtonDuration = Duration(milliseconds: 1200);
 
   // ── node-card ───────────────────────────────────────────────────
@@ -615,7 +615,7 @@ abstract final class TpTokens {
   static const double nodeCardGap = 12;
   static const Color nodeCardBg = Color(0xFFFFFFFF);
   static const Color nodeCardBorder = Color(0xFFE2E8F0);
-  static const List<BoxShadow> nodeCardShadow = [BoxShadow(color: Color(0x0F0F172A), offset: Offset(0, 1), blurRadius: 2), BoxShadow(color: Color(0x0A0F172A), offset: Offset(0, 1), blurRadius: 3)];
+  static const List<BoxShadow> nodeCardShadow = [BoxShadow(color: Color(0x0A0F172A), offset: Offset(0, 1), blurRadius: 3)];
   static const List<BoxShadow> nodeCardShadowHover = [BoxShadow(color: Color(0x140F172A), offset: Offset(0, 4), blurRadius: 12), BoxShadow(color: Color(0x0A0F172A), offset: Offset(0, 1), blurRadius: 3)];
   static const Color nodeCardTitleFg = Color(0xFF0F172A);
   static const Color nodeCardMetaFg = Color(0xFF64748B);
@@ -653,7 +653,7 @@ abstract final class TpTokens {
   static const Color inputBorderHover = Color(0xFFCBD5E1);
   static const Color inputBorderFocus = Color(0xFF1677FF);
   static const Color inputFg = Color(0xFF0F172A);
-  static const Color inputPlaceholder = Color(0xFF94A3B8);
+  static const Color inputPlaceholder = Color(0xFF64748B);
 
   // ── search-bar ──────────────────────────────────────────────────
   static const double searchBarHeight = 44;

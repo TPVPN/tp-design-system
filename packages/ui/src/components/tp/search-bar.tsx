@@ -47,7 +47,7 @@ function SearchBar({
       <Search
         aria-hidden="true"
         className="pointer-events-none absolute left-3.5 size-5 text-fg-muted"
-        strokeWidth={2}
+        strokeWidth={1.75}
       />
       <input
         ref={inputRef}
@@ -58,6 +58,7 @@ function SearchBar({
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
+        aria-label={props['aria-labelledby'] ? undefined : (props['aria-label'] ?? placeholder)}
         disabled={disabled}
         data-slot="search-bar-input"
         className={cn(
@@ -76,11 +77,11 @@ function SearchBar({
           onClick={clear}
           disabled={disabled}
           className={cn(
-            'absolute right-2 flex size-7 items-center justify-center rounded-full bg-bg-surface-sunken text-fg-secondary',
+            'absolute right-0 flex size-11 items-center justify-center rounded-md text-fg-secondary',
             'transition-colors duration-(--duration-fast) outline-none hover:bg-slate-200 hover:text-fg-primary focus-visible:shadow-focus',
           )}
         >
-          <X className="size-3.5" strokeWidth={2.5} aria-hidden="true" />
+          <X className="size-4" strokeWidth={2} aria-hidden="true" />
         </button>
       ) : null}
     </div>

@@ -51,3 +51,9 @@ if (preloadHrefs.length > 0) {
 await copyFile(index, path.join(DIST, '404.html'));
 await writeFile(path.join(DIST, '.nojekyll'), '');
 console.log('[postbuild] wrote dist/404.html and dist/.nojekyll');
+
+const routes = await readFile(path.join(here, '../src/app/routes.tsx'), 'utf8');
+const routePaths = [...new Set([...routes.matchAll(/^  '(\/[^']*)': \(\) => import/gm)].map(match => match[1]))];
+await writeFile(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routePaths.map(route => `<url><loc>https://brand.tpvpn.com${route}</loc></url>`).join('')}</urlset>\n`);
+await writeFile(path.join(DIST, 'robots.txt'), 'User-agent: *\nAllow: /\nSitemap: https://brand.tpvpn.com/sitemap.xml\n');
+console.log(`[postbuild] sitemap.xml: ${routePaths.length} routes`);

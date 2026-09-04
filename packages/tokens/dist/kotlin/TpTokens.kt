@@ -191,8 +191,8 @@ object TpTokens {
     val colorFgSecondary = Color(0xFF475569)
     /** Captions, metadata. 4.76:1 (AA floor) */
     val colorFgMuted = Color(0xFF64748B)
-    /** Placeholders & disabled only — not AA */
-    val colorFgPlaceholder = Color(0xFF94A3B8)
+    /** Readable input hints on light surfaces; disabled text uses fg.disabled */
+    val colorFgPlaceholder = Color(0xFF64748B)
     val colorFgDisabled = Color(0xFF94A3B8)
     /** Brand text, links. 4.82:1 */
     val colorFgBrand = Color(0xFF046BEF)
@@ -549,7 +549,7 @@ object TpTokens {
     /** Flat */
     val elevationLevel0 = emptyList<TpShadow>()
     /** Resting cards */
-    val elevationLevel1 = listOf(TpShadow(color = Color(0x0F0F172A), offsetX = 0.dp, offsetY = 1.dp, blur = 2.dp), TpShadow(color = Color(0x0A0F172A), offsetX = 0.dp, offsetY = 1.dp, blur = 3.dp))
+    val elevationLevel1 = listOf(TpShadow(color = Color(0x0A0F172A), offsetX = 0.dp, offsetY = 1.dp, blur = 3.dp))
     /** Node cards, dropdowns, hover lift */
     val elevationLevel2 = listOf(TpShadow(color = Color(0x140F172A), offsetX = 0.dp, offsetY = 4.dp, blur = 12.dp), TpShadow(color = Color(0x0A0F172A), offsetX = 0.dp, offsetY = 1.dp, blur = 3.dp))
     /** Popovers, sheets */
@@ -557,9 +557,9 @@ object TpTokens {
     /** Modals */
     val elevationLevel4 = listOf(TpShadow(color = Color(0x2E0F172A), offsetX = 0.dp, offsetY = 24.dp, blur = 64.dp), TpShadow(color = Color(0x140F172A), offsetX = 0.dp, offsetY = 4.dp, blur = 12.dp))
     /** Primary CTA hover, connected button */
-    val elevationBrandGlow = listOf(TpShadow(color = Color(0x591677FF), offsetX = 0.dp, offsetY = 12.dp, blur = 32.dp))
+    val elevationBrandGlow = listOf(TpShadow(color = Color(0x2E1677FF), offsetX = 0.dp, offsetY = 8.dp, blur = 24.dp))
     /** Connected connection button */
-    val elevationBrandGlowLg = listOf(TpShadow(color = Color(0x731677FF), offsetX = 0.dp, offsetY = 20.dp, blur = 60.dp))
+    val elevationBrandGlowLg = listOf(TpShadow(color = Color(0x3D1677FF), offsetX = 0.dp, offsetY = 16.dp, blur = 48.dp))
     val elevationSuccessGlow = listOf(TpShadow(color = Color(0x4D22C55E), offsetX = 0.dp, offsetY = 12.dp, blur = 32.dp))
     /** Keyboard focus ring */
     val elevationFocus = listOf(TpShadow(color = Color(0x521677FF), offsetX = 0.dp, offsetY = 0.dp, blur = 0.dp, spread = 3.dp))
@@ -600,7 +600,7 @@ object TpTokens {
     /** 小标签 / Tab */
     val typographyLabelSm = TpTextStyle(size = 12.sp, lineHeight = 16.sp, weight = 500, letterSpacing = 0.0f)
     /** 辅助说明 */
-    val typographyCaption = TpTextStyle(size = 12.sp, lineHeight = 18.sp, weight = 400, letterSpacing = 0.0f)
+    val typographyCaption = TpTextStyle(size = 13.sp, lineHeight = 20.sp, weight = 400, letterSpacing = 0.0f)
     /** text-transform: uppercase */
     /** 分组小标（大写） */
     val typographyOverline = TpTextStyle(size = 11.sp, lineHeight = 16.sp, weight = 600, letterSpacing = 0.06f)
@@ -651,7 +651,7 @@ object TpTokens {
     val connectionButtonConnectedFg = Color(0xFFFFFFFF)
     val connectionButtonConnectedRing = Color(0x291677FF)
     // connection-button.connected-gradient (CSS gradient — use Brush.linearGradient): radial-gradient(120% 120% at 30% 20%, #3D8BFF 0%, #1677FF 60%, #0158C9 100%)
-    val connectionButtonConnectedShadow = listOf(TpShadow(color = Color(0x731677FF), offsetX = 0.dp, offsetY = 20.dp, blur = 60.dp))
+    val connectionButtonConnectedShadow = listOf(TpShadow(color = Color(0x3D1677FF), offsetX = 0.dp, offsetY = 16.dp, blur = 48.dp))
     /** Milliseconds. */
     val connectionButtonDuration = 1200
 
@@ -661,7 +661,7 @@ object TpTokens {
     val nodeCardGap = 12.dp
     val nodeCardBg = Color(0xFFFFFFFF)
     val nodeCardBorder = Color(0xFFE2E8F0)
-    val nodeCardShadow = listOf(TpShadow(color = Color(0x0F0F172A), offsetX = 0.dp, offsetY = 1.dp, blur = 2.dp), TpShadow(color = Color(0x0A0F172A), offsetX = 0.dp, offsetY = 1.dp, blur = 3.dp))
+    val nodeCardShadow = listOf(TpShadow(color = Color(0x0A0F172A), offsetX = 0.dp, offsetY = 1.dp, blur = 3.dp))
     val nodeCardShadowHover = listOf(TpShadow(color = Color(0x140F172A), offsetX = 0.dp, offsetY = 4.dp, blur = 12.dp), TpShadow(color = Color(0x0A0F172A), offsetX = 0.dp, offsetY = 1.dp, blur = 3.dp))
     val nodeCardTitleFg = Color(0xFF0F172A)
     val nodeCardMetaFg = Color(0xFF64748B)
@@ -699,7 +699,7 @@ object TpTokens {
     val inputBorderHover = Color(0xFFCBD5E1)
     val inputBorderFocus = Color(0xFF1677FF)
     val inputFg = Color(0xFF0F172A)
-    val inputPlaceholder = Color(0xFF94A3B8)
+    val inputPlaceholder = Color(0xFF64748B)
 
     // ── search-bar ──────────────────────────────────────────────────
     val searchBarHeight = 44.dp

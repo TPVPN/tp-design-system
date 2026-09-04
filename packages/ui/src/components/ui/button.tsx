@@ -19,16 +19,16 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          'bg-action-primary-bg text-action-primary-fg shadow-level-1 hover:bg-action-primary-bg-hover hover:shadow-brand-glow active:bg-action-primary-bg-pressed',
+          'bg-action-primary-bg text-action-primary-fg shadow-level-1 hover:bg-action-primary-bg-hover active:bg-action-primary-bg-pressed',
         /** shadcn alias of `primary`. */
         default:
-          'bg-action-primary-bg text-action-primary-fg shadow-level-1 hover:bg-action-primary-bg-hover hover:shadow-brand-glow active:bg-action-primary-bg-pressed',
+          'bg-action-primary-bg text-action-primary-fg shadow-level-1 hover:bg-action-primary-bg-hover active:bg-action-primary-bg-pressed',
         secondary:
           'bg-action-secondary-bg text-action-secondary-fg hover:bg-action-secondary-bg-hover active:bg-action-secondary-bg-pressed',
         ghost:
           'bg-transparent text-action-ghost-fg hover:bg-action-ghost-bg-hover active:bg-action-ghost-bg-pressed disabled:bg-transparent',
         outline:
-          'border border-action-outline-border bg-action-outline-bg text-action-outline-fg shadow-level-1 hover:border-action-outline-border-hover hover:bg-action-outline-bg-hover',
+          'border border-action-outline-border bg-action-outline-bg text-action-outline-fg hover:border-action-outline-border-hover hover:bg-action-outline-bg-hover',
         destructive:
           'bg-action-destructive-bg text-action-destructive-fg shadow-level-1 hover:bg-action-destructive-bg-hover',
         link: 'h-auto rounded-none px-0 text-fg-link underline-offset-4 hover:text-fg-link-hover hover:underline active:scale-100 disabled:bg-transparent',

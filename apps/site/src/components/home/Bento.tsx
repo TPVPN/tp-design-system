@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { ArrowUpRight, FileArchive } from 'lucide-react';
 import { Button } from '@tpvpn/ui/components/ui/button';
-import { LogoMark } from '@/components/brand/LogoMark';
+import { brandUrl } from '@/lib/assets';
 import { HomeSection } from '@/components/home/HomeSection';
 import { cn } from '@/lib/cn';
 import { useReveal, VIEWPORT_ONCE } from '@/lib/motion';
@@ -27,14 +27,15 @@ function Card({ to, title, en, description, span, children }: CardProps) {
     <motion.div variants={item} className={cn('min-w-0', span)}>
       <Link
         to={to}
-        className="group flex h-full flex-col overflow-hidden rounded-xl border border-border-default bg-bg-surface shadow-level-1 transition-[box-shadow,border-color,transform] duration-300 ease-emphasized hover:-translate-y-0.5 hover:border-border-strong hover:shadow-level-2"
+        className="group flex h-full flex-col overflow-hidden rounded-xl border border-border-default bg-bg-surface transition-[box-shadow,border-color] duration-200 hover:border-blue-300 hover:shadow-level-2"
       >
         <div className="relative flex h-40 items-center justify-center overflow-hidden border-b border-border-subtle bg-bg-canvas px-6">{children}</div>
         <div className="flex flex-1 items-start justify-between gap-4 p-5">
           <div>
             <p className="text-headline text-fg-primary">
-              {title} <span className="font-medium text-fg-muted">{en}</span>
+              {title}
             </p>
+            <p lang="en" className="mt-1 text-[13px] text-fg-muted">{en}</p>
             <p className="mt-1 text-sm leading-6 text-fg-secondary">{description}</p>
           </div>
           <ArrowUpRight
@@ -60,7 +61,7 @@ export function Bento() {
     <HomeSection
       id="start"
       eyebrow="从这里开始 · Start here"
-      title="四大板块，一次进入。"
+      title="从品牌到界面。"
       description="品牌、基础 Token、组件与平台交付——每个入口都指向可以直接使用的真实文件与代码。"
     >
       <motion.div
@@ -71,12 +72,7 @@ export function Bento() {
         className="grid gap-4 md:grid-cols-2 lg:grid-cols-12"
       >
         <Card to="/brand/logo" title="品牌 Logo" en="Logo" description="标识、变体、安全空间与全部下载。" span="lg:col-span-4">
-          <span className="flex items-center" style={{ gap: 10 }}>
-            <LogoMark size={56} title="" />
-            <span className="font-bold text-fg-primary" style={{ fontSize: 31, letterSpacing: '-0.02em', lineHeight: 1 }}>
-              TP VPN
-            </span>
-          </span>
+          <img src={brandUrl.logoSvg('horizontal')} alt="TP VPN" className="h-12 w-auto max-w-full" />
         </Card>
 
         <Card to="/brand/color" title="色彩" en="Color" description="TP Blue #1677FF、五条 11 阶色带与状态色。" span="lg:col-span-5">
@@ -95,7 +91,7 @@ export function Bento() {
           </div>
         </Card>
 
-        <Card to="/brand/typography" title="字体" en="Typography" description="Inter 变量字体、20 级字阶与 tabular 数字。" span="lg:col-span-3">
+        <Card to="/brand/typography" title="字体" en="Typography" description="中英文排版、22 个文字角色与等宽数字。" span="lg:col-span-3">
           <span className="flex items-end gap-4">
             <span className="text-[64px] leading-none font-extrabold tracking-[-0.025em] text-fg-primary">Aa</span>
             <span className="flex flex-col gap-0.5 pb-1 text-[13px] leading-5 text-fg-muted">

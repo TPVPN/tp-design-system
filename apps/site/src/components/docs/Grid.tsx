@@ -9,11 +9,11 @@ export interface GridProps extends HTMLAttributes<HTMLDivElement> {
 
 const COLS: Record<NonNullable<GridProps['cols']>, string> = {
   1: 'grid-cols-1',
-  2: 'grid-cols-1 sm:grid-cols-2',
-  3: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
-  4: 'grid-cols-2 lg:grid-cols-4',
-  5: 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5',
-  6: 'grid-cols-3 sm:grid-cols-4 lg:grid-cols-6',
+  2: 'grid-cols-1 @min-[480px]:grid-cols-2',
+  3: 'grid-cols-1 @min-[480px]:grid-cols-2 @min-[720px]:grid-cols-3',
+  4: 'grid-cols-2 @min-[720px]:grid-cols-4',
+  5: 'grid-cols-2 @min-[560px]:grid-cols-3 @min-[800px]:grid-cols-5',
+  6: 'grid-cols-2 @min-[480px]:grid-cols-3 @min-[800px]:grid-cols-6',
 };
 const GAPS = { sm: 'gap-3', md: 'gap-4', lg: 'gap-6' } as const;
 

@@ -184,8 +184,8 @@ export default function ButtonPage() {
           <StateTile label="默认" hint="action.primary.bg">
             <Button>连接</Button>
           </StateTile>
-          <StateTile label="悬停" hint="action.primary.bg-hover + brand-glow" simulated>
-            <Button className="bg-action-primary-bg-hover shadow-brand-glow">连接</Button>
+          <StateTile label="悬停" hint="action.primary.bg-hover · 保持原有层级" simulated>
+            <Button className="bg-action-primary-bg-hover">连接</Button>
           </StateTile>
           <StateTile label="按下" hint="action.primary.bg-pressed · scale 0.98" simulated>
             <Button className="scale-[0.98] bg-action-primary-bg-pressed">连接</Button>

@@ -21,7 +21,7 @@ function Card({ item, dir }: { item: NavItem; dir: 'prev' | 'next' }) {
         {next && <ArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden />}
       </span>
       <span className="font-medium text-fg-primary group-hover:text-blue-700">
-        {item.title} <span className="font-normal text-fg-muted">{item.en}</span>
+        {item.title}
       </span>
     </Link>
   );
@@ -33,7 +33,7 @@ export function PageNav({ className }: { className?: string }) {
   const { prev, next } = siblings(pathname);
   if (!prev && !next) return null;
   return (
-    <nav aria-label="分页导航" className={cn('mt-16 flex gap-4 border-t border-border-subtle pt-8', className)}>
+    <nav aria-label="分页导航" className={cn('mt-16 flex flex-col gap-4 border-t border-border-subtle pt-8 @min-[480px]:flex-row', className)}>
       {prev ? <Card item={prev} dir="prev" /> : <div className="flex-1" />}
       {next ? <Card item={next} dir="next" /> : <div className="flex-1" />}
     </nav>
